@@ -1,4 +1,4 @@
-package fr.afpa.formation.mecanique.business;
+package fr.afpa.formation.mecanique;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
