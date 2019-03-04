@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<!-- ================================================================================== -->
 	<!-- == (01.) INFORMATIONS SUR LE PROJET PARENT ======================================= -->
@@ -8,15 +10,16 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.0.5.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
+
 	<!-- ================================================================================== -->
 	<!-- == (02.) INFORMATIONS SUR LE PROJET ============================================== -->
 	<!-- ================================================================================== -->
 	<groupId>fr.afpa.formation</groupId>
-	<artifactId>AfpaMeca</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>AfpaMeca</name>
+	<artifactId>AfpaPoleMeca</artifactId>
+	<version>1.0</version>
+	<name>AfpaPoleMeca</name>
 	<packaging>pom</packaging>
 	<description>Gestion des Réparations en ligne</description>
 
@@ -47,16 +50,16 @@
 	<!-- ================================================================================== -->
 	<build>
 		<plugins>
-<!-- 			<plugin> -->
-<!-- 				<groupId>org.springframework.boot</groupId> -->
-<!-- 				<artifactId>spring-boot-maven-plugin</artifactId> -->
-<!-- 			</plugin> -->
+			<!-- <plugin> -->
+			<!-- <groupId>org.springframework.boot</groupId> -->
+			<!-- <artifactId>spring-boot-maven-plugin</artifactId> -->
+			<!-- </plugin> -->
 		</plugins>
 	</build>
 
-  <modules>
-    <module>AfpaMeca-business</module>
-    <module>AfpaMeca-application</module>
-    <module>AfpaMeca-persistence</module>
-  </modules>
+	<modules>
+		<module>AfpaPoleMeca-application</module>
+		<module>AfpaPoleMeca-business</module>
+		<module>AfpaPoleMeca-persistence</module>
+	</modules>
 </project>
