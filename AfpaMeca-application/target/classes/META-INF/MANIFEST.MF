@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Implementation-Title: AfpaMeca-business
+Implementation-Title: AfpaMeca-application
 Implementation-Version: 0.0.1-SNAPSHOT
 Built-By: 34011-65-06
 Implementation-Vendor-Id: fr.afpa.formation
