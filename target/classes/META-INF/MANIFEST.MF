@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: AfpaPoleMecaaze
+Implementation-Version: 1.0
+Built-By: 34011-65-06
+Implementation-Vendor-Id: fr.afpa.formation.mecanique
+Build-Jdk: 1.8.0_181
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/AfpaPoleMecaaze
+Created-By: Maven Integration for Eclipse
+
