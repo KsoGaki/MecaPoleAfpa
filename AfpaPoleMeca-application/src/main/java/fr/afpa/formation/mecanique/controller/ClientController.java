@@ -14,7 +14,7 @@ public class ClientController {
 	ClientService service;
 	
 	@GetMapping("/client")
-	public String getClients(Model model) {
+	public String getClients(Model model) throws Exception {
 		
 		model.addAttribute("clients", service.findAll());
 		

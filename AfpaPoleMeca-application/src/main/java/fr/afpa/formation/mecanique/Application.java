@@ -28,7 +28,7 @@ public class Application implements CommandLineRunner{
 		
 	}
 	
-	public void init() {
+	public void init() throws Exception {
 		
 		Client client1 = new Client(null, "jv.gmail.com", "VALJEAN", "Jean", "0213243546", "451267", "2 345 678 3",
 				new Date(), "N", null);
