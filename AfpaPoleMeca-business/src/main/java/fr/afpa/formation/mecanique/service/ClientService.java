@@ -9,21 +9,43 @@ import fr.afpa.formation.mecanique.entity.Client;
 import fr.afpa.formation.mecanique.repository.ClientRepository;
 
 @Service
-public class ClientService {
+public class ClientService implements IService<Client, Exception>{
 	
 	@Autowired
 	ClientRepository clientRepository;
-	
-	public List<Client> findAll(){
+
+	@Override
+	public List<Client> findAll() throws Exception {
 		List<Client> list = (List<Client>) clientRepository.findAll();
 		
 		return list;
-		
 	}
-	
-	public Client create(Client cl) {
-		return clientRepository.save(cl);
+
+	@Override
+	public Client create(Client t) throws Exception {
+		return clientRepository.save(t);
+	}
+
+	@Override
+	public Client findById(long id) throws Exception {
+		return clientRepository.findById(id).get();
+	}
+
+	@Override
+	public Client update(Client t) throws Exception {
+		return clientRepository.save(t);
+	}
+
+	@Override
+	public void delete(Client t) throws Exception {
+		clientRepository.delete(t);
 		
 	}
 
+	@Override
+	public void deleteById(long id) throws Exception {
+		clientRepository.deleteById(id);
+		
+	}
+	
 }

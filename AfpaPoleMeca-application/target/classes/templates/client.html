@@ -19,10 +19,10 @@
 				<th></th>
 			</tr>
 			<tr th:each="client : ${clients}">
-				<td th:text="$client.numero"></td>
-				<td th:text="$client.nom"></td>
-				<td th:text="$client.prenom"></td>
-				<td th:text="$client.numeroCarteAfpa"></td>
+				<td th:text="${client.numero}"></td>
+				<td th:text="${client.nom}"></td>
+				<td th:text="${client.prenom}"></td>
+				<td th:text="${client.numeroCarteAfpa}"></td>
 				<td><a href=""><img alt="" src="img/mod30.jpg"></a></td>
 			</tr>
 		</table>
