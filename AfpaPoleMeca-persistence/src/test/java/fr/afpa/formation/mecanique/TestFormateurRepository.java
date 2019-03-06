@@ -55,5 +55,6 @@ public class TestFormateurRepository {
 	public void findAll() {
 		List<Formateur> formateurs = (List<Formateur>) formateurRepository.findAll();
 		assertEquals(listSize, formateurs.size());
+		
 	}
 }
