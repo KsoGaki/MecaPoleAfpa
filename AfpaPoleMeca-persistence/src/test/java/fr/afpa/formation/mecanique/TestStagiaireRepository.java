@@ -42,7 +42,8 @@ public class TestStagiaireRepository {
 				"mot de passe", new Date(), new Date(), "2 345 678 3");
 
 		Stagiaire stagiaire2 = new Stagiaire(null, "jd.gmail.com", "DUPOND", "Jacques", "05 72 84 13 21", "68735124",
-				"mot de passe2", new Date(), new Date(), "1 234 526 2");
+
+				"mot de passe", new Date(), new Date(), "1 234 526 2");
 		entityManager.persist(stagiaire1);
 		entityManager.persist(stagiaire2);
 		listSize = 2;
