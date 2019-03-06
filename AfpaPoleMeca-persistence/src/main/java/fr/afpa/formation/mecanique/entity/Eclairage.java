@@ -19,28 +19,28 @@ public class Eclairage {
 	@Column(name="id_Eclairage")
 	private Long id;
 	
-	@Column(name="feuxPosition", nullable = false)
+	@Column(name="feuxPosition", nullable = true)
 	private Boolean feuxPosition;
 	
-	@Column(name="eclairageImmatriculation", nullable = false)
+	@Column(name="eclairageImmatriculation", nullable = true)
 	private Boolean eclairageImmatriculation;
 	
-	@Column(name="feuxCroisement", nullable = false)
+	@Column(name="feuxCroisement", nullable = true)
 	private Boolean feuxCroisement;
 	
-	@Column(name="feuxRoute", nullable = false)
+	@Column(name="feuxRoute", nullable = true)
 	private Boolean feuxRoute;
 	
-	@Column(name="indicationDirectionFeuxDetresse", nullable = false)
+	@Column(name="indicationDirectionFeuxDetresse", nullable = true)
 	private Boolean indicationDirectionFeuxDetresse;
 	
-	@Column(name="feuxStop", nullable = false)
+	@Column(name="feuxStop", nullable = true)
 	private Boolean feuxStop;
 	
-	@Column(name="feuxAntiBrouillard", nullable = false)
+	@Column(name="feuxAntiBrouillard", nullable = true)
 	private Boolean feuxAntiBrouillard;
 	
-	@Column(name="feuxRecul", nullable = false)
+	@Column(name="feuxRecul", nullable = true)
 	private Boolean feuxRecul;
 		
 	/**

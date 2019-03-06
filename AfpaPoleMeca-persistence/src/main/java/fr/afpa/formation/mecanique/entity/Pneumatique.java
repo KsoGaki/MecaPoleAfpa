@@ -19,34 +19,34 @@ public class Pneumatique {
 	@Column(name="id_Pneumatique")
 	private Long id;
 
-	@Column(name="etatPneuAvantGauche", nullable = false)
+	@Column(name="etatPneuAvantGauche", nullable = true)
 	private Integer etatPneuAvantGauche;
 
-	@Column(name="etatPneuAvantDroit", nullable = false)
+	@Column(name="etatPneuAvantDroit", nullable = true)
 	private Integer etatPneuAvantDroit;
 
-	@Column(name="etatPneuArriereGauche", nullable = false)
+	@Column(name="etatPneuArriereGauche", nullable = true)
 	private Integer etatPneuArriereGauche;
 
-	@Column(name="etatPneuArriereDroit", nullable = false)
+	@Column(name="etatPneuArriereDroit", nullable = true)
 	private Integer etatPneuArriereDroit;
 	
-	@Column(name="etatPneuSecours", nullable = false)
+	@Column(name="etatPneuSecours", nullable = true)
 	private Integer etatPneuSecours;
 
-	@Column(name="pressionPneuAvantGauche", nullable = false)
+	@Column(name="pressionPneuAvantGauche", nullable = true)
 	private Integer pressionPneuAvantGauche;
 
-	@Column(name="pressionPneuAvantDroit", nullable = false)
+	@Column(name="pressionPneuAvantDroit", nullable = true)
 	private Integer pressionPneuAvantDroit;
 
-	@Column(name="pressionPneuArriereGauche", nullable = false)
+	@Column(name="pressionPneuArriereGauche", nullable = true)
 	private Integer pressionPneuArriereGauche;
 
-	@Column(name="pressionPneuArriereDroit", nullable = false)
+	@Column(name="pressionPneuArriereDroit", nullable = true)
 	private Integer pressionPneuArriereDroit;
 	
-	@Column(name="pressionPneuSecours", nullable = false)
+	@Column(name="pressionPneuSecours", nullable = true)
 	private Integer pressionPneuSecours;
 	
 	/**

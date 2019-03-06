@@ -45,7 +45,7 @@ public class ControleQualite {
 	private Visibilite visibilite;
 	
 	@OneToOne
-    @JoinColumn(name="id_Niveau")
+    @JoinColumn(name="id_Niveau", nullable= false)
 	private Niveau niveau;
 
 	

@@ -19,31 +19,31 @@ public class Visibilite {
 	@Column(name="id_Visibilite")
 	private Long id;
 
-	@Column(name="pareBrise", nullable = false)
+	@Column(name="pareBrise", nullable = true)
 	private Boolean pareBrise;
 
-	@Column(name="vitrage", nullable = false)
+	@Column(name="vitrage", nullable = true)
 	private Boolean vitrage;
 
-	@Column(name="essuieGlaceAvant", nullable = false)
+	@Column(name="essuieGlaceAvant", nullable = true)
 	private Boolean essuieGlaceAvant;
 
-	@Column(name="essuieGlaceArriere", nullable = false)
+	@Column(name="essuieGlaceArriere", nullable = true)
 	private Boolean essuieGlaceArriere;
 
-	@Column(name="laveGlace", nullable = false)
+	@Column(name="laveGlace", nullable = true)
 	private Boolean laveGlace;
 
-	@Column(name="lavePhare", nullable = false)
+	@Column(name="lavePhare", nullable = true)
 	private Boolean lavePhare;
 
-	@Column(name="retroInterieur", nullable = false)
+	@Column(name="retroInterieur", nullable = true)
 	private Boolean retroInterieur;
 
-	@Column(name="retroExterieur", nullable = false)
+	@Column(name="retroExterieur", nullable = true)
 	private Boolean retroExterieur;
 
-	@Column(name="immatriculation", nullable = false)
+	@Column(name="immatriculation", nullable = true)
 	private Boolean immatriculation;
 	
 	/**

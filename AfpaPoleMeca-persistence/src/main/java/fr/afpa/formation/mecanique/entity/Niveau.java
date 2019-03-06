@@ -19,19 +19,19 @@ public class Niveau {
 	@Column(name="id_Eclairage")
 	private Long id;
 	
-	@Column(name="liquideRefroidissement", nullable = false)
+	@Column(name="liquideRefroidissement", nullable = true)
 	private Boolean liquideRefroidissement;
 	
-	@Column(name="laveGlace", nullable = false)
+	@Column(name="laveGlace", nullable = true)
 	private Boolean laveGlace;
 	
-	@Column(name="huileMoteur", nullable = false)
+	@Column(name="huileMoteur", nullable = true)
 	private Boolean huileMoteur;
 	
-	@Column(name="liquideFrein", nullable = false)
+	@Column(name="liquideFrein", nullable = true)
 	private Boolean liquideFrein;
 	
-	@Column(name="huileDirectionAssistee", nullable = false)
+	@Column(name="huileDirectionAssistee", nullable = true)
 	private Boolean huileDirectionAssistee;
 	
 	
