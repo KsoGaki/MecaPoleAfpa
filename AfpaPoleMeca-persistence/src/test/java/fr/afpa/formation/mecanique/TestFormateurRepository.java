@@ -43,6 +43,9 @@ public class TestFormateurRepository {
 
 		Formateur formateur2 = new Formateur(null, "jd.gmail.com", "DUPOND", "Jacques", "05 72 84 13 21", "68735124",
 				"mot de passe2", new Date(), new Date());
+		/**
+		 * 
+		 */
 		entityManager.persist(formateur1);
 		entityManager.persist(formateur2);
 		listSize = 2;
