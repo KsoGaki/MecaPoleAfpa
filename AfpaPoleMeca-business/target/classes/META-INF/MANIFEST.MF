@@ -1,9 +1,0 @@
-Manifest-Version: 1.0
-Implementation-Title: AfpaMeca-business
-Implementation-Version: 1.0
-Built-By: 34011-65-03
-Implementation-Vendor-Id: fr.afpa.formation
-Build-Jdk: 1.8.0_181
-Implementation-URL: http://maven.apache.org
-Created-By: Maven Integration for Eclipse
-
