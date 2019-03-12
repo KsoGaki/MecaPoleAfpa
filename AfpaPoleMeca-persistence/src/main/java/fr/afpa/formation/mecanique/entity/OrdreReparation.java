@@ -145,9 +145,117 @@ public class OrdreReparation {
 		this.statutOrdreReparation = statutOrdreReparation;
 		Utilisateur = utilisateur;
 	}
-	
-	
-	
-	
-	
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getNumero() {
+		return numero;
+	}
+
+	public void setNumero(String numero) {
+		this.numero = numero;
+	}
+
+	public Date getDateCreation() {
+		return dateCreation;
+	}
+
+	public void setDateCreation(Date dateCreation) {
+		this.dateCreation = dateCreation;
+	}
+
+	public Date getDateEntree() {
+		return dateEntree;
+	}
+
+	public void setDateEntree(Date dateEntree) {
+		this.dateEntree = dateEntree;
+	}
+
+	public Date getDateSortie() {
+		return dateSortie;
+	}
+
+	public void setDateSortie(Date dateSortie) {
+		this.dateSortie = dateSortie;
+	}
+
+	public String getSymptomesClient() {
+		return symptomesClient;
+	}
+
+	public void setSymptomesClient(String symptomesClient) {
+		this.symptomesClient = symptomesClient;
+	}
+
+	public String getInterventionARealiser() {
+		return interventionARealiser;
+	}
+
+	public void setInterventionARealiser(String interventionARealiser) {
+		this.interventionARealiser = interventionARealiser;
+	}
+
+	public String getInterventionRealisee() {
+		return interventionRealisee;
+	}
+
+	public void setInterventionRealisee(String interventionRealisee) {
+		this.interventionRealisee = interventionRealisee;
+	}
+
+	public String getFutursTravaux() {
+		return futursTravaux;
+	}
+
+	public void setFutursTravaux(String futursTravaux) {
+		this.futursTravaux = futursTravaux;
+	}
+
+	public Vehicule getVehicule() {
+		return vehicule;
+	}
+
+	public void setVehicule(Vehicule vehicule) {
+		this.vehicule = vehicule;
+	}
+
+	public StatutOrdreReparation getStatutOrdreReparation() {
+		return statutOrdreReparation;
+	}
+
+	public void setStatutOrdreReparation(StatutOrdreReparation statutOrdreReparation) {
+		this.statutOrdreReparation = statutOrdreReparation;
+	}
+
+	public Utilisateur getUtilisateur() {
+		return Utilisateur;
+	}
+
+	public void setUtilisateur(Utilisateur utilisateur) {
+		Utilisateur = utilisateur;
+	}
+
+	public Utilisateur getUtilisateurCloturer() {
+		return utilisateurCloturer;
+	}
+
+	public void setUtilisateurCloturer(Utilisateur utilisateurCloturer) {
+		this.utilisateurCloturer = utilisateurCloturer;
+	}
+
+	public Utilisateur getFormateur() {
+		return formateur;
+	}
+
+	public void setFormateur(Utilisateur formateur) {
+		this.formateur = formateur;
+	}
+		
 }
