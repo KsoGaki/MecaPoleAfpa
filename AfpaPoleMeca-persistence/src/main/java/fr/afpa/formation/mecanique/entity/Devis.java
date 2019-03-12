@@ -14,7 +14,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
@@ -44,8 +43,6 @@ public class Devis {
 	@ManyToOne
 	@JoinColumn(name="id_Devis")
 	private Fournisseur fournisseur;
-	////////////////////////
-
 
 	////////////CONSTRUCTEURS///////////
 	
@@ -130,8 +127,6 @@ public class Devis {
 	public void setFournisseur(Fournisseur fournisseur) {
 		this.fournisseur = fournisseur;
 	}
-
-
 	
 	///////////////////TO STRING/////////////
 	@Override

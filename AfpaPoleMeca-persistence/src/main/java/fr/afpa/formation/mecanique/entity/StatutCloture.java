@@ -20,7 +20,7 @@ public class StatutCloture {
 	private Long id;
 
 
-	@Column(name="libelle")
+	@Column(unique=true,name="libelle")
 	private String libelle;
 
 

@@ -4,6 +4,8 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -19,7 +21,13 @@ public abstract class Utilisateur extends Personne {
 	private Date dateInscription;
 
 	private Date dateRadiation;
-
+	
+	@ManyToOne
+	@JoinColumn(name="id_RoleUtilisateur")
+	private RoleUtilisateur roleUtilisateur;
+	
+	
+	
 	/**
 	 * <b>CONSTRUCTEUR SANS ARGUMENT</b>
 	 */
