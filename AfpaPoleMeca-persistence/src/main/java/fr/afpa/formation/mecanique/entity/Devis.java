@@ -43,6 +43,12 @@ public class Devis {
 	@ManyToOne
 	@JoinColumn(name="id_Devis")
 	private Fournisseur fournisseur;
+	
+	
+	@ManyToOne
+	@JoinColumn(name="id_TypePaiment")
+	private TypePaiement typePaiement;
+	
 
 	////////////CONSTRUCTEURS///////////
 	
@@ -56,13 +62,14 @@ public class Devis {
 	 * TOUS LES ATTRIBUTS Y COMPRIS L'ID.<br/>
 	 * (UTILISE LORS DES OPERATIONS DE RECHERCHE ET D'EXTRACTION 'findBy'). <br/>
 	 */
-	public Devis(Long id, Date dateCreation, String numero, Date datePaiement, Fournisseur fournisseur) {
+	public Devis(Long id, Date dateCreation, String numero, Date datePaiement, Fournisseur fournisseur, TypePaiement typePaiement) {
 		super();
 		this.id = id;
 		this.dateCreation = dateCreation;
 		this.numero = numero;
 		this.datePaiement = datePaiement;
 		this.fournisseur = fournisseur;
+		this.typePaiement = typePaiement;
 	}	
 
 	/**
@@ -70,19 +77,19 @@ public class Devis {
 	 * TOUS LES ATTRIBUTS SAUF L'ID.<br/>
 	 * (UTILISE LORS DES OPERATIONS DE CREATION 'create'). <br/>
 	 */	
-	public Devis(Date dateCreation, String numero, Date datePaiement, Fournisseur fournisseur) {
+	public Devis(Date dateCreation, String numero, Date datePaiement, Fournisseur fournisseur,TypePaiement typePaiement) {
 		super();
 		this.dateCreation = dateCreation;
 		this.numero = numero;
 		this.datePaiement = datePaiement;
 		this.fournisseur = fournisseur;
+		this.typePaiement = typePaiement;
 	}
-
 	
 	////////GETTERS ET SETTERS////////////
 	public Long getId() {
-		return id;
-	}
+		return id;	}
+
 
 	public void setId(Long id) {
 		this.id = id;
@@ -127,17 +134,13 @@ public class Devis {
 	public void setFournisseur(Fournisseur fournisseur) {
 		this.fournisseur = fournisseur;
 	}
-	
-	///////////////////TO STRING/////////////
-	@Override
-	public String toString() {
-		return "Devis id = " + id + " dateCreation = " + dateCreation + " numero = " + numero + " datePaiement = "
-				+ datePaiement + " listeItemDevis = " + listItemDevis + " fournisseur = " + fournisseur;
+	public TypePaiement getTypePaiement() {
+		return typePaiement;
 	}
-	////////////////////////////////////
 
-	
-	
-	
+	public void setTypePaiement(TypePaiement typePaiement) {
+		this.typePaiement = typePaiement;
+	}
+		
 	
 }
