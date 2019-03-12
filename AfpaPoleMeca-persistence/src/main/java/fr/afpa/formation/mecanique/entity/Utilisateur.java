@@ -4,6 +4,8 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -20,6 +22,12 @@ public abstract class Utilisateur extends Personne {
 
 	private Date dateRadiation;
 
+	@ManyToOne
+	@JoinColumn(name="id_RoleUtilisateur")
+	private RoleUtilisateur roleUtilisateur;
+
+
+
 	/**
 	 * <b>CONSTRUCTEUR SANS ARGUMENT</b>
 	 */
@@ -33,12 +41,13 @@ public abstract class Utilisateur extends Personne {
 	 * (UTILISE LORS DES OPERATIONS DE CREATION 'create'). <br/>
 	 */
 	public Utilisateur(String mail, String nom, String prenom, String telephone, String identifiant, String motDePasse,
-			Date dateInscription, Date dateRadiation) {
+			Date dateInscription, Date dateRadiation,RoleUtilisateur roleUtilisateur) {
 		super(mail, nom, prenom, telephone);
 		this.identifiant = identifiant;
 		this.motDePasse = motDePasse;
 		this.dateInscription = dateInscription;
 		this.dateRadiation = dateRadiation;
+		this.roleUtilisateur = roleUtilisateur;
 	}
 
 	/**
@@ -47,12 +56,13 @@ public abstract class Utilisateur extends Personne {
 	 * (UTILISE LORS DES OPERATIONS DE RECHERCHE ET D'EXTRACTION 'findBy'). <br/>
 	 */
 	public Utilisateur(Long id, String mail, String nom, String prenom, String telephone, String identifiant, String motDePasse,
-			Date dateInscription, Date dateRadiation) {
+			Date dateInscription, Date dateRadiation, RoleUtilisateur roleUtilisateur) {
 		super(id, mail, nom, prenom, telephone);
 		this.identifiant = identifiant;
 		this.motDePasse = motDePasse;
 		this.dateInscription = dateInscription;
 		this.dateRadiation = dateRadiation;
+		this.roleUtilisateur = roleUtilisateur;
 	}
 
 	public String getIdentifiant() { return identifiant; }
@@ -63,8 +73,17 @@ public abstract class Utilisateur extends Personne {
 
 	public Date getDateRadiation() { return dateRadiation; }
 
-	public void setIdentifiant(String identifiant) { this.identifiant = identifiant;
-}
+	public void setIdentifiant(String identifiant)	{ 
+		this.identifiant = identifiant;
+	}
+
+	public RoleUtilisateur getRoleUtilisateur() {
+		return roleUtilisateur;
+	}
+
+	public void setRoleUtilisateur(RoleUtilisateur roleUtilisateur) {
+		this.roleUtilisateur = roleUtilisateur;
+	}
 
 	public void setMotDePasse(String motDePasse) {
 		this.motDePasse = motDePasse;
@@ -77,12 +96,15 @@ public abstract class Utilisateur extends Personne {
 	public void setDateRadiation(Date dateRadiation) {
 		this.dateRadiation = dateRadiation;
 	}
-
+	////////TO STRING\\\\\\\\\\\\\
 	@Override
 	public String toString() {
-		return "Utilisateur [identifiant=" + identifiant + ", motDePasse=" + motDePasse + ", dateInscription="
-				+ dateInscription + ", dateRadiation=" + dateRadiation + "]";
+		return "Utilisateur identifiant = " + identifiant + " motDePasse = " + motDePasse + " dateInscription = "
+				+ dateInscription + " dateRadiation = " + dateRadiation + " roleUtilisateur = " + roleUtilisateur;
 	}
 
 
 }
+
+
+

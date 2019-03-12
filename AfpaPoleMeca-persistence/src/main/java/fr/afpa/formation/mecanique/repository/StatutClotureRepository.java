@@ -1,4 +1,4 @@
-package fr.afpa.formation.mecanique;
+package fr.afpa.formation.mecanique.repository;
 
 import org.springframework.data.repository.CrudRepository;
 

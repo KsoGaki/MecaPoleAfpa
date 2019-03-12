@@ -17,9 +17,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import fr.afpa.formation.mecanique.entity.Cloture;
-import fr.afpa.formation.mecanique.entity.Fournisseur;
 import fr.afpa.formation.mecanique.entity.StatutCloture;
 import fr.afpa.formation.mecanique.repository.ClotureRepository;
+import fr.afpa.formation.mecanique.repository.StatutClotureRepository;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes=SmallApp.class)
@@ -108,8 +108,8 @@ public class ClotureTestUnitaire {
 		Date avant = new Date();
 		Cloture cloture1 = new Cloture(avant,statut1);		
 		clotureRepo.save(cloture1);
-		Long id1 = cloture1.getId();
-		Cloture clotureid = clotureRepo.findById(id1).get();
+		//Long id1 = cloture1.getId();
+		//Cloture clotureid = clotureRepo.findById(id1).get();
 		cloture1.setDate(new Date());
 		cloture1 = clotureRepo.save(cloture1);
 		assertNotEquals(avant, cloture1.getDate());
