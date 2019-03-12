@@ -34,8 +34,8 @@ public class Stagiaire extends Utilisateur{
 	 */
 	public Stagiaire(String mail, String nom, String prenom, String telephone
 			, String identifiant, String motDePasse, Date dateInscription, Date dateRadiation
-			, String numeroCarte) {
-		super(mail, nom, prenom, telephone, identifiant, motDePasse, dateInscription, dateRadiation);
+			, String numeroCarte, RoleUtilisateur roleUtilisateur) {
+		super(mail, nom, prenom, telephone, identifiant, motDePasse, dateInscription, dateRadiation,roleUtilisateur);
 		this.numeroCarte = numeroCarte;
 	}
 
@@ -46,8 +46,8 @@ public class Stagiaire extends Utilisateur{
 	 */
 	public Stagiaire(Long id, String mail, String nom, String prenom, String telephone
 			, String identifiant, String motDePasse, Date dateInscription, Date dateRadiation
-			, String numeroCarte) {
-		super(id, mail, nom, prenom, telephone, identifiant, motDePasse, dateInscription, dateRadiation);
+			, String numeroCarte, RoleUtilisateur roleUtilisateur) {
+		super(id, mail, nom, prenom, telephone, identifiant, motDePasse, dateInscription, dateRadiation, roleUtilisateur);
 		this.numeroCarte = numeroCarte;
 	}
 

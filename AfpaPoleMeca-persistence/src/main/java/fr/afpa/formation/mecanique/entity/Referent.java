@@ -14,14 +14,14 @@ public class Referent extends Utilisateur {
 	}
 
 	public Referent(Long id, String mail, String nom, String prenom, String telephone, String identifiant,
-			String motDePasse, Date dateInscription, Date dateRadiation) {
-		super(id, mail, nom, prenom, telephone, identifiant, motDePasse, dateInscription, dateRadiation);
+			String motDePasse, Date dateInscription, Date dateRadiation,RoleUtilisateur roleUtilisateur) {
+		super(id, mail, nom, prenom, telephone, identifiant, motDePasse, dateInscription, dateRadiation,roleUtilisateur);
 		// TODO Auto-generated constructor stub
 	}
 
 	public Referent(String mail, String nom, String prenom, String telephone, String identifiant, String motDePasse,
-			Date dateInscription, Date dateRadiation) {
-		super(mail, nom, prenom, telephone, identifiant, motDePasse, dateInscription, dateRadiation);
+			Date dateInscription, Date dateRadiation, RoleUtilisateur roleUtilisateur) {
+		super(mail, nom, prenom, telephone, identifiant, motDePasse, dateInscription, dateRadiation, roleUtilisateur);
 		// TODO Auto-generated constructor stub
 	}
 
