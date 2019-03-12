@@ -10,8 +10,6 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -26,7 +24,7 @@ public class Fournisseur {
 	@GenericGenerator(name="native", strategy= "native")
 	private Long id;
 
-	@Column(name="code",length=20, nullable=false)
+	@Column(unique=true,name="code",length=20, nullable=false)
 	private String code;
 
 	@Column(name="nom",length=50, nullable=false)

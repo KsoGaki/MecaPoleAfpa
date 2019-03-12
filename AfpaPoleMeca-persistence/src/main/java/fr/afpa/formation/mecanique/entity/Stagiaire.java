@@ -5,6 +5,8 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 @DiscriminatorValue(value="STA")
@@ -12,6 +14,11 @@ public class Stagiaire extends Utilisateur{
 
 	@Column(unique = true, length = 25)
 	private String numeroCarte; 
+	
+	@ManyToOne
+	@JoinColumn(name="id_Filiere")
+	private Filiere filiere;	
+	
 
 	/**
 	 * <b>CONSTRUCTEUR SANS ARGUMENT</b>

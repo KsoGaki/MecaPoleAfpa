@@ -1,13 +1,23 @@
 package fr.afpa.formation.mecanique.entity;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 
 @Entity
 @DiscriminatorValue(value = "FOR")
 public class Formateur extends Utilisateur {
+	@ManyToMany(fetch = FetchType.EAGER,cascade= {CascadeType.PERSIST,CascadeType.MERGE})
+	@JoinTable(name="formateur_filiere",joinColumns=@JoinColumn(name="id_Formateur"),inverseJoinColumns=@JoinColumn(name="id_Filiere"))
+	private Set<Filiere> listFiliere = new HashSet<Filiere>();
 
 	public Formateur() {
 
