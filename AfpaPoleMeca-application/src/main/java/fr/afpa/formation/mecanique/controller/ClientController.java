@@ -10,9 +10,10 @@ import fr.afpa.formation.mecanique.service.ClientService;
 
 @Controller
 public class ClientController {
-	
+
 	@Autowired
 	ClientService clientService;
+
 	
 	@GetMapping("/client")
 	public String getClients(Model model) throws Exception {	

@@ -11,17 +11,15 @@ import fr.afpa.formation.mecanique.entity.Vehicule;
 import fr.afpa.formation.mecanique.service.VehiculeService;
 
 @Controller
-public class VehiculeController {
+public class ControleQualiteController {
 
 	@Autowired
 	VehiculeService service;
 
-	@GetMapping("/vehicule")
+	@GetMapping("/controlequalite")
 	public String getvehicules(Model model) throws Exception {
 		
-		model.addAttribute("vehicules", service.findAll());
-		
-		return "vehicule";
+		return "controlequalite";
 	}
 
 }
