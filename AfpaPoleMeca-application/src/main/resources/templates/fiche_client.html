@@ -21,14 +21,88 @@
 	</div>
 	<div id="menu" class="flex-r">
 		<a href="accueil" th:text="#{menu.accueil}"></a>
-		<a href="client" class="active" th:text="#{menu.clients}"></a>
+		<a href="\client" class="active" th:text="#{menu.clients}"></a>
 		<a href="#" th:text="#{menu.ordre}"></a>
 		<a href="#" th:text="#{menu.admin}"></a>
 	</div>
 	<div id="main">
-		<div class="container tab-4">
+		<div class="container ficheClient">
 			<h2 th:text="#{client_detail.title}"></h2>
+			<div class="flex-r info">
+				<div class="flex-c">
+					<div class="flex-r">
+						<h4 th:text="#{client.prenom} + ':&nbsp;'"></h4>
+						<p th:text="${client.prenom}"></p>
+					</div>
+					<div class="flex-r">
+						<h4 th:text="#{client.nom} + ':&nbsp;'"></h4>
+						<p th:text="${client.nom}"></p>
+					</div>
+					<div class="flex-r">
+						<h4 th:text="#{client.telephone} + ':&nbsp;'"></h4>
+						<p th:text="${client.telephone}"></p>
+					</div>
+					<div class="flex-r">
+						<h4 th:text="#{client.email} + ':&nbsp;'"></h4>
+						<p th:text="${client.mail}"></p>
+					</div>
+				</div>
+				<div class="flex-c">
+					<h4 id="address" th:text="#{client_delail.adresse} + ':&nbsp;'"></h4>
+					<p th:text="${client.adresse.adresse}"></p>
+					<p th:text="${client.adresse.codePostal} + '&nbsp;-&nbsp;' + ${client.adresse.localite}"></p>
+					<br>
+					<div class="flex-r">
+						<h4 th:text="#{client.carte}  + ':&nbsp;'"></h4>
+						<p th:text="${client.numeroCarteAfpa}"></p>
+					</div>
+				</div>
+			</div>
+			<div class="flex-rr">
+				<a href="#" class="flex-c greenButton" th:text="#{client_detail.update}"></a>
+			</div>
 
+			<div class="tab-4">
+				<h2 th:text="#{vehicule.title}"></h2>
+				<div class="title vehicule flex-r">
+					<h3 th:text="#{vehicule.marque}"></h3>
+					<h3 th:text="#{vehicule.modele}"></h3>
+					<h3 th:text="#{vehicule.vin}"></h3>
+					<h3 th:text="#{vehicule.immatriculation}"></h3>
+					<h3></h3>
+				</div>
+				<div th:each="vehicule : ${client.vehicules}" class="item vehicule flex-r">
+					<p th:text="${vehicule.marque}"></p>
+					<p th:text="${vehicule.modele}"></p>
+					<p th:text="${vehicule.vin}"></p>
+					<p th:text="${vehicule.immatriculation}"></p>
+					<a href="#" th:text="#{vehicule.todetail}"></a>
+				</div>
+				<div class="flex-rr">
+					<a href="#" class="flex-c greenButton" th:text="#{vehicule.add}"></a>
+				</div>
+			</div>
+
+			<div class="tab-4">
+				<h2 th:text="#{ordre_reparation.title}"></h2>
+				<div class="title or flex-r">
+					<h3 th:text="#{ordre_reparation.voiture}"></h3>
+					<h3 th:text="#{ordre_reparation.receptionnaire}"></h3>
+					<h3 th:text="#{ordre_reparation.date_reception}"></h3>
+					<h3 th:text="#{ordre_reparation.statut}"></h3>
+					<h3 class="blank"></h3>
+				</div>
+				<div th:each="ordreReparation : ${listOrdreReparation}" class="item or flex-r">
+					<p th:text="${ordreReparation.voiture.marque} + ${ordreReparation.voiture.modele}"></p>
+					<p th:text="${ordreReparation.utilisateur.prenom} + ${ordreReparation.utilisateur.nom}"></p>
+					<p th:text="${ordreReparation.dateEntree}"></p>
+					<p th:text="${ordreReparation.statutOrdreReparation.statut}"></p>
+					<a href="#" th:text="#{ordre_reparation.todetail}"></a>
+				</div>
+				<div class="flex-rr">
+					<a href="\client" class="flex-c greenButton" th:text="#{client.return}"></a>
+				</div>
+			</div>
 		</div>
 	</div>
 </body>

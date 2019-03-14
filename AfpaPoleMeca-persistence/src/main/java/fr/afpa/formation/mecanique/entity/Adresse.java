@@ -1,14 +1,10 @@
 package fr.afpa.formation.mecanique.entity;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
@@ -29,12 +25,6 @@ public class Adresse {
 	private String codePostal;
 	@Column(length = 150, nullable=false)
 	private String localite;
-	/**
-	 * CARDINALITE AVEC CLIENT
-	 */
-	@OneToMany(mappedBy="adresse")
-	private Set<Client> clients = new HashSet<>();
-
 	
 	public Adresse() {
 		
@@ -69,9 +59,6 @@ public class Adresse {
 		return localite;
 	}
 
-	public Set<Client> getClients() {
-		return clients;
-	}
 
 	public void setId(Long id) {
 		this.id = id;
@@ -93,14 +80,11 @@ public class Adresse {
 		this.localite = localite;
 	}
 
-	public void setClients(Set<Client> clients) {
-		this.clients = clients;
-	}
 
 	@Override
 	public String toString() {
 		return "Adresse [id=" + id + ", adresse=" + adresse + ", complement=" + complement + ", codePostal="
-				+ codePostal + ", localite=" + localite + ", clients=" + clients + "]";
+				+ codePostal + ", localite=" + localite;
 	}
 
 }
