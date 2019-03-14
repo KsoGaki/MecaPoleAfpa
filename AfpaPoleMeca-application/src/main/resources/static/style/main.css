@@ -177,6 +177,7 @@ h2 {
    ======MAIN====== 
    ================
 */
+
 #main {
 	margin-top: 50px;
 	margin-bottom: 50px;
@@ -186,7 +187,7 @@ h2 {
 	justify-content: space-around;
 }
 
-.container.tab-4 .title h3 {
+.tab-4 .title h3 {
 	width: 20%;
 	background-color: #28a745;
 	color: white;
@@ -196,10 +197,10 @@ h2 {
 	padding: 10px 15px;
 }
 
-.container.tab-4 .item p, .container.tab-4 .item a {
+.tab-4 .item p, .tab-4 .item a {
 	width: 20%;
 	font-size: 17px;
-	margin: 4px 2px;
+	margin: 2px 2px;
 	padding: 10px 15px;
 }
 
@@ -209,4 +210,38 @@ h2 {
 
 .container .item:nth-child(odd) p, .container .item:nth-child(odd) a {
 	background-color: rgba(215, 215, 215, .65);
+}
+
+/*
+   ========================
+   ======FICHE-CLIENT====== 
+   ========================
+*/
+
+.ficheClient h2 {
+  margin-bottom: 50px;
+}
+
+.ficheClient .info h4 {
+  font-weight: normal;
+  font-size: 24px;
+  color: #28a745;
+}
+
+.ficheClient .info p {
+  font-size: 24px;
+}
+
+.ficheClient .info #address {
+  margin-bottom: 0 !important;
+}
+
+.ficheClient .info .flex-c {
+  min-width: 25%;
+  max-width: 45%;
+  justify-content: space-between;
+}
+
+.ficheClient .info {
+  justify-content: space-around;
 }

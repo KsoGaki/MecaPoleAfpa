@@ -55,9 +55,9 @@ public class OrdreReparation {
 	@JoinColumn(name="id_StatutOrdreReparation")
 	private StatutOrdreReparation statutOrdreReparation;
 	
-	@ManyToOne
+	@ManyToOne()
 	@JoinColumn(name="id_Utilisateur")
-	private Utilisateur Utilisateur;
+	private Utilisateur utilisateur;
 	
 	@ManyToOne
 	@JoinColumn(name="id_Utilisateur_Cloturer")
@@ -108,7 +108,7 @@ public class OrdreReparation {
 		this.futursTravaux = futursTravaux;
 		this.vehicule = vehicule;
 		this.statutOrdreReparation = statutOrdreReparation;
-		Utilisateur = utilisateur;
+		this.utilisateur = utilisateur;
 	}
 	
 	/**
@@ -143,7 +143,7 @@ public class OrdreReparation {
 		this.futursTravaux = futursTravaux;
 		this.vehicule = vehicule;
 		this.statutOrdreReparation = statutOrdreReparation;
-		Utilisateur = utilisateur;
+		this.utilisateur = utilisateur;
 	}
 
 	public Long getId() {
@@ -235,11 +235,11 @@ public class OrdreReparation {
 	}
 
 	public Utilisateur getUtilisateur() {
-		return Utilisateur;
+		return utilisateur;
 	}
 
 	public void setUtilisateur(Utilisateur utilisateur) {
-		Utilisateur = utilisateur;
+		this.utilisateur = utilisateur;
 	}
 
 	public Utilisateur getUtilisateurCloturer() {

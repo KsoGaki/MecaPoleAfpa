@@ -1,7 +1,10 @@
 package fr.afpa.formation.mecanique.entity;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -10,6 +13,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
@@ -36,11 +40,14 @@ public class Vehicule {
 	@Column(length = 17)
 	private String vin;
 	private Date dateMiseCirculation;
+	
+	@OneToMany(mappedBy="vehicule",fetch = FetchType.LAZY,cascade= CascadeType.REFRESH)
+    private Set<OrdreReparation> listOrdreReparation = new HashSet<OrdreReparation>() ;
 
 	/**
 	 * CARDINALITE AVEC CLIENT
 	 */
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "id_client")
 	private Client client;
 
@@ -102,6 +109,10 @@ public class Vehicule {
 	public Client getClient() {
 		return client;
 	}
+	
+	public Set<OrdreReparation> getListOrdreReparation() {
+		return listOrdreReparation;
+	}
 
 	public void setId(Long id) {
 		this.id = id;
@@ -142,13 +153,9 @@ public class Vehicule {
 	public void setClient(Client client) {
 		this.client = client;
 	}
-
-	@Override
-	public String toString() {
-		return "Vehicule [id=" + id + ", marque=" + marque + ", modele=" + modele + ", kilometrage=" + kilometrage
-				+ ", numeroCarteGrise=" + numeroCarteGrise + ", numeroAssurance=" + numeroAssurance
-				+ ", immatriculation=" + immatriculation + ", vin=" + vin + ", dateMiseCirculation="
-				+ dateMiseCirculation + ", client=" + client + "]";
+	
+	public void setListOrdreReparation(Set<OrdreReparation> listOrdreReparation) {
+		this.listOrdreReparation = listOrdreReparation;
 	}
 
 }

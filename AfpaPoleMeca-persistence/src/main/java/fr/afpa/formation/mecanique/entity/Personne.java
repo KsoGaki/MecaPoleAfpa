@@ -11,6 +11,8 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.DiscriminatorOptions;
+
 
 /**
  * 
@@ -23,11 +25,13 @@ import javax.persistence.Table;
  * PERMET D'EVITER 
  */
 @DiscriminatorColumn(name="PERSONNE_TYPE", discriminatorType= DiscriminatorType.STRING, length=3)
+@DiscriminatorOptions(force = true)
 @Table(name = "Personne")
 public abstract class Personne {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name="id_Personne")
 	private Long id;
 	
 	private String nom;
