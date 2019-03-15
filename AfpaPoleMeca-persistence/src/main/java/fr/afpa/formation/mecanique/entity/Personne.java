@@ -11,8 +11,6 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.DiscriminatorOptions;
-
 
 /**
  * 
@@ -25,7 +23,6 @@ import org.hibernate.annotations.DiscriminatorOptions;
  * PERMET D'EVITER 
  */
 @DiscriminatorColumn(name="PERSONNE_TYPE", discriminatorType= DiscriminatorType.STRING, length=3)
-@DiscriminatorOptions(force = true)
 @Table(name = "Personne")
 public abstract class Personne {
 

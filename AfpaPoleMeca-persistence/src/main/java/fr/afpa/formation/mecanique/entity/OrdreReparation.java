@@ -55,7 +55,7 @@ public class OrdreReparation {
 	@JoinColumn(name="id_StatutOrdreReparation")
 	private StatutOrdreReparation statutOrdreReparation;
 	
-	@ManyToOne()
+	@ManyToOne
 	@JoinColumn(name="id_Utilisateur")
 	private Utilisateur utilisateur;
 	

@@ -93,13 +93,13 @@
 					<h3 class="blank"></h3>
 				</div>
 				<div th:each="ordreReparation : ${listOrdreReparation}" class="item or flex-r">
-					<p th:text="${ordreReparation.voiture.marque} + ${ordreReparation.voiture.modele}"></p>
-					<p th:text="${ordreReparation.utilisateur.prenom} + ${ordreReparation.utilisateur.nom}"></p>
+					<p th:text="${ordreReparation.vehicule.marque} + '&nbsp;' + ${ordreReparation.vehicule.modele}"></p>
+					<p th:text="${ordreReparation.utilisateur.prenom} + '&nbsp;' + ${ordreReparation.utilisateur.nom}"></p>
 					<p th:text="${ordreReparation.dateEntree}"></p>
 					<p th:text="${ordreReparation.statutOrdreReparation.statut}"></p>
 					<a href="#" th:text="#{ordre_reparation.todetail}"></a>
 				</div>
-				<div class="flex-rr">
+				<div class="flex-rr middle">
 					<a href="\client" class="flex-c greenButton" th:text="#{client.return}"></a>
 				</div>
 			</div>

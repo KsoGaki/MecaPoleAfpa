@@ -85,15 +85,26 @@ h2 {
 }
 
 .greenButton {
-	padding: 7px 25px;
+	padding: 7px 20px;
 	background-color: #28a745;
 	color: white;
 	margin-top: 25px;
 	font-size: 18px;
+	border-radius: 5px;
 }
 
 .greenButton:hover {
 	background-color: #23903c;
+}
+
+.clientButton .greenButton {
+	margin: 0;
+}
+
+.middle {
+	margin-top: 50px;
+	justify-content: center;
+	align-items: center;
 }
 
 .container .item a {
@@ -106,6 +117,7 @@ h2 {
    =====HEADER===== 
    ================
 */
+
 #header .container {
 	justify-content: space-between;
 	align-items: center;
@@ -177,7 +189,6 @@ h2 {
    ======MAIN====== 
    ================
 */
-
 #main {
 	margin-top: 50px;
 	margin-bottom: 50px;
@@ -217,31 +228,30 @@ h2 {
    ======FICHE-CLIENT====== 
    ========================
 */
-
 .ficheClient h2 {
-  margin-bottom: 50px;
+	margin-bottom: 50px;
 }
 
 .ficheClient .info h4 {
-  font-weight: normal;
-  font-size: 24px;
-  color: #28a745;
+	font-weight: normal;
+	font-size: 24px;
+	color: #28a745;
 }
 
 .ficheClient .info p {
-  font-size: 24px;
+	font-size: 24px;
 }
 
 .ficheClient .info #address {
-  margin-bottom: 0 !important;
+	margin-bottom: 0 !important;
 }
 
 .ficheClient .info .flex-c {
-  min-width: 25%;
-  max-width: 45%;
-  justify-content: space-between;
+	min-width: 25%;
+	max-width: 45%;
+	justify-content: space-between;
 }
 
 .ficheClient .info {
-  justify-content: space-around;
+	justify-content: space-around;
 }
