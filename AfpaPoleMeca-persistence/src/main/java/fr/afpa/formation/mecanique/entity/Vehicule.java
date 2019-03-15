@@ -41,7 +41,7 @@ public class Vehicule {
 	private String vin;
 	private Date dateMiseCirculation;
 	
-	@OneToMany(mappedBy="vehicule",fetch = FetchType.LAZY,cascade= CascadeType.REFRESH)
+	@OneToMany(mappedBy="vehicule",fetch = FetchType.LAZY,cascade= CascadeType.ALL)
     private Set<OrdreReparation> listOrdreReparation = new HashSet<OrdreReparation>() ;
 
 	/**
