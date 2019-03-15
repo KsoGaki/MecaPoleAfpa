@@ -39,6 +39,11 @@ public class ClientController {
 		return "fiche_client";
 	}
 	
+	@GetMapping("/client/nouveau")
+	public String createClients() throws Exception {	
+		return "newClient";
+	}
+	
 	
 
 }
