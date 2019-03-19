@@ -21,7 +21,6 @@ public class Formateur extends Utilisateur {
 	private Set<Filiere> listFiliere = new HashSet<Filiere>();
 
 	public Formateur() {
-
 	}
 
 	public Formateur(Long id, String mail, String nom, String prenom, String telephone, String identifiant, RoleUtilisateur roleUtilisateur,
@@ -30,9 +29,11 @@ public class Formateur extends Utilisateur {
 		// TODO Auto-generated constructor stub
 	}
 
+
 	public Formateur(String mail, String nom, String prenom, String telephone, String identifiant, String motDePasse, RoleUtilisateur roleUtilisateur,
 			Date dateInscription, Date dateRadiation) {
 		super(mail, nom, prenom, telephone, identifiant, motDePasse, dateInscription, dateRadiation, roleUtilisateur);
+
 		// TODO Auto-generated constructor stub
 	}
 

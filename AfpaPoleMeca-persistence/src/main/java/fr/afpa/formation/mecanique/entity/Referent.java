@@ -1,3 +1,4 @@
+
 package fr.afpa.formation.mecanique.entity;
 
 import java.util.Date;
@@ -31,3 +32,4 @@ public class Referent extends Utilisateur {
 	}
 
 }
+
