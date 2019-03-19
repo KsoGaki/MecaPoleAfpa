@@ -1,4 +1,4 @@
-package fr.afpa.formation.mecanique.service;
+package fr.afpa.formation.mecanique;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
@@ -18,6 +18,7 @@ import fr.afpa.formation.mecanique.entity.Devis;
 import fr.afpa.formation.mecanique.entity.Fournisseur;
 import fr.afpa.formation.mecanique.entity.TypePaiement;
 import fr.afpa.formation.mecanique.repository.DevisRepository;
+import fr.afpa.formation.mecanique.service.DevisService;
 
 @RunWith(MockitoJUnitRunner.class)
 public class DevisServiceTestMock {
