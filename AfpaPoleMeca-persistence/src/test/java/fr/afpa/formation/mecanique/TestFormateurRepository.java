@@ -2,7 +2,6 @@ package fr.afpa.formation.mecanique;
 
 import static org.junit.Assert.assertEquals;
 
-import java.util.Date;
 import java.util.List;
 
 import org.junit.Before;
@@ -37,7 +36,7 @@ public class TestFormateurRepository {
 	 */
 	@Before
 	public void setUp() {
-
+/*
 		Formateur formateur1 = new Formateur(null, "jv.gmail.com", "VALJEAN", "Jean", "04 67 14 23 45", "12435687",
 				"mot de passe", new Date(), new Date());
 
@@ -45,11 +44,10 @@ public class TestFormateurRepository {
 				"mot de passe2", new Date(), new Date());
 		/**
 		 * 
-		 */
 		entityManager.persist(formateur1);
 		entityManager.persist(formateur2);
 		listSize = 2;
-	}
+	*/}
 
 	/**
 	 * TEST UNITAIRE

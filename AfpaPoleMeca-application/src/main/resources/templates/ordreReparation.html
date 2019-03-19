@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
-<title th:text="#{client.title}"></title>
+<title th:text="#{application.title} + '-' + #{ordre_reparation.ordre_reparation}"></title>
 <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
 <link rel="stylesheet" th:href="@{/style/main.css}" />
 </head>
@@ -27,17 +27,28 @@
 	</div>
 	<div id="main">
 		<div class="container tab-4">
-
-			<h2 th:text="#{client_new.title}"></h2>
-
-			<form th:action="" th:object="${client}">
-				
-			</form>
-			
-			<div class="flex-rr middle">
-				<a href="#" class="flex-c greenButton" th:text="#{client_new.create}"></a>
+			<div class="flex-rr clientButton">
+				<a href="\client/nouveau" class="flex-c greenButton" th:text="#{client.ajouter}"></a>
 			</div>
 			
+			<h2 th:text="#{client.title}"></h2>
+
+			<div class="title flex-r">
+				<h3 th:text="#{client.prenom}"></h3>
+				<h3 th:text="#{client.nom}"></h3>
+				<h3 th:text="#{client.email}"></h3>
+				<h3 th:text="#{client.telephone}"></h3>
+				<h3></h3>
+			</div>
+
+			<div th:each="client : ${clients}" class="item flex-r">
+				<p th:text="${client.prenom}"></p>
+				<p th:text="${client.nom}"></p>
+				<p th:text="${client.mail}"></p>
+				<p th:text="${client.telephone}"></p>
+				<a th:href=@{|/client/${client.id}/|} th:text="#{client.todetail}"></a>
+			</div>
+
 		</div>
 	</div>
 </body>

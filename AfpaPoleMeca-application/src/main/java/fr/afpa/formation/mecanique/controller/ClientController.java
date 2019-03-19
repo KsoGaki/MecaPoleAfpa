@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import fr.afpa.formation.mecanique.entity.Client;
 import fr.afpa.formation.mecanique.entity.OrdreReparation;
@@ -15,19 +16,20 @@ import fr.afpa.formation.mecanique.entity.Vehicule;
 import fr.afpa.formation.mecanique.service.ClientService;
 
 @Controller
+@RequestMapping("/client")
 public class ClientController {
 
 	@Autowired
 	ClientService clientService;
 
 	
-	@GetMapping("/client")
+	@GetMapping("")
 	public String getClients(Model model) throws Exception {	
 		model.addAttribute("clients", clientService.findAll());	
 		return "client";
 	}
 	
-	@GetMapping("/client/{id}")
+	@GetMapping("/{id}")
 	public String getClientById(@PathVariable("id") Long id, Model model) throws Exception {	
 		Client client = clientService.findById(id);
 		List<OrdreReparation> listOrdreReparation = new ArrayList<OrdreReparation>();
@@ -39,7 +41,7 @@ public class ClientController {
 		return "fiche_client";
 	}
 	
-	@GetMapping("/client/nouveau")
+	@GetMapping("/nouveau")
 	public String createClients() throws Exception {	
 		return "newClient";
 	}

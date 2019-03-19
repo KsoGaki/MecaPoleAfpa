@@ -4,7 +4,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
 
-import java.util.Date;
 import java.util.List;
 
 import org.junit.Before;
@@ -12,17 +11,14 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import fr.afpa.formation.mecanique.entity.Devis;
 import fr.afpa.formation.mecanique.entity.Fournisseur;
-import fr.afpa.formation.mecanique.entity.ItemDevis;
 import fr.afpa.formation.mecanique.entity.Piece;
 import fr.afpa.formation.mecanique.repository.DevisRepository;
 import fr.afpa.formation.mecanique.repository.FournisseurRepository;
-import fr.afpa.formation.mecanique.repository.ItemDevisRepository;
 import fr.afpa.formation.mecanique.repository.PieceRepository;
 
 @RunWith(SpringRunner.class)
@@ -31,16 +27,16 @@ import fr.afpa.formation.mecanique.repository.PieceRepository;
 public class DevisTestUnitaire {
 
 	
-	
+	/*
 	@Autowired
 	private TestEntityManager entityManager;
-	
+	*/
 	@Autowired
 	private DevisRepository devisRepo;
-	
+	/*
 	@Autowired
 	private ItemDevisRepository itemDevisRepo;
-	
+	*/
 	@Autowired
 	private PieceRepository pieceRepo;
 	
@@ -50,7 +46,7 @@ public class DevisTestUnitaire {
 	
 	@Before
 	public void setUp() {
-		Date crea = new Date();
+		/*Date crea = new Date();
 		Date paie = new Date();
 		
 		Fournisseur fournisseur = new Fournisseur("test-Code", "test-nom");
@@ -73,7 +69,7 @@ public class DevisTestUnitaire {
 		ItemDevis itemDevis2 = new ItemDevis(20,devis2, piece2);
 		entityManager.persist(itemDevis1);
 		entityManager.persist(itemDevis2);
-	}
+	*/}
 	//////////////|||TEST FOURNISSEUR|||\\\\\\\\\\\\\\\\\\\\
 	@Test
 	public void findAll() {
@@ -217,7 +213,7 @@ public class DevisTestUnitaire {
 		List<Devis> listDevis = (List<Devis>) devisRepo.findAll();
 		assertNotNull(listDevis);
 		assertEquals(2,listDevis.size());
-	}
+	}/*
 	@Test
 	public void testCreateDevis() {
 		String numero = "devis-num";
@@ -402,7 +398,7 @@ public class DevisTestUnitaire {
 		listItemDevis = (List<ItemDevis>) itemDevisRepo.findAll();
 		assertEquals(2, listItemDevis.size());
 	}
-	
+	*/
 	
 	
 }
