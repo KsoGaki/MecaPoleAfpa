@@ -3,12 +3,15 @@ package fr.afpa.formation.mecanique.entity;
 import java.util.Date;
 
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorType;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
+@DiscriminatorColumn(name="UTILISATEUR_TYPE", discriminatorType= DiscriminatorType.STRING, length=3)
 @Table(name = "Utilisateur")
 public abstract class Utilisateur extends Personne {
 
@@ -96,6 +99,7 @@ public abstract class Utilisateur extends Personne {
 	public void setDateRadiation(Date dateRadiation) {
 		this.dateRadiation = dateRadiation;
 	}
+	
 	////////TO STRING\\\\\\\\\\\\\
 	@Override
 	public String toString() {

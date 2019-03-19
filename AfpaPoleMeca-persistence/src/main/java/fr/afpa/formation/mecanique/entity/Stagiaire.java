@@ -10,7 +10,7 @@ import javax.persistence.ManyToOne;
 
 @Entity
 @DiscriminatorValue(value="STA")
-public class Stagiaire extends Utilisateur{
+public class Stagiaire extends Utilisateur {
 
 	@Column(unique = true, length = 25)
 	private String numeroCarte; 
@@ -32,10 +32,9 @@ public class Stagiaire extends Utilisateur{
 	 * TOUS LES ATTRIBUTS SAUF L'ID.<br/>
 	 * (UTILISE LORS DES OPERATIONS DE CREATION 'create'). <br/>
 	 */
-	public Stagiaire(String mail, String nom, String prenom, String telephone
-			, String identifiant, String motDePasse, Date dateInscription, Date dateRadiation
-			, String numeroCarte, RoleUtilisateur roleUtilisateur) {
-		super(mail, nom, prenom, telephone, identifiant, motDePasse, dateInscription, dateRadiation,roleUtilisateur);
+	public Stagiaire(String mail, String nom, String prenom, String telephone,String identifiant, String motDePasse, Date dateInscription, Date dateRadiation, RoleUtilisateur roleUtilisateur
+			, String numeroCarte) {
+		super(mail, nom, prenom, telephone, identifiant, motDePasse, dateInscription, dateRadiation, roleUtilisateur);
 		this.numeroCarte = numeroCarte;
 	}
 
@@ -44,9 +43,8 @@ public class Stagiaire extends Utilisateur{
 	 * TOUS LES ATTRIBUTS Y COMPRIS L'ID.<br/>
 	 * (UTILISE LORS DES OPERATIONS DE RECHERCHE ET D'EXTRACTION 'findBy'). <br/>
 	 */
-	public Stagiaire(Long id, String mail, String nom, String prenom, String telephone
-			, String identifiant, String motDePasse, Date dateInscription, Date dateRadiation
-			, String numeroCarte, RoleUtilisateur roleUtilisateur) {
+	public Stagiaire(Long id, String mail, String nom,String prenom,String telephone, String identifiant, String motDePasse, Date dateInscription, Date dateRadiation, RoleUtilisateur roleUtilisateur
+			, String numeroCarte) {
 		super(id, mail, nom, prenom, telephone, identifiant, motDePasse, dateInscription, dateRadiation, roleUtilisateur);
 		this.numeroCarte = numeroCarte;
 	}
@@ -64,6 +62,12 @@ public class Stagiaire extends Utilisateur{
 		return "Stagiaire [numeroCarte=" + numeroCarte + "]";
 	}
 
-	
+	public Filiere getFiliere() {
+		return filiere;
+	}
+
+	public void setFiliere(Filiere filiere) {
+		this.filiere = filiere;
+	}
 	
 }

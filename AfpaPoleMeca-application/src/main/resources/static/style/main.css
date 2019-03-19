@@ -1,234 +1,257 @@
-html{
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	font-family: "Titillium Web"
 }
 
-.mainTable
-{
-    border-collapse: collapse;
-    width: 100%;
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;	
+html, body {
+	width: 100%;
+	height: 100%;
 }
 
-.mainTable th 
-{
-	background-color:  #4CAF50;
-	color:white;
-	text-align: left;
-	font-weight: normal
-}
-
-.mainTable td,th 
-{
-	border: 1px solid black;
-}
-
-.mainTable tr:nth-child(even){background-color: #DDDDDD;}
-.mainTable tr:nth-child(odd){background-color: #EEEEEE;}
-
-.mainTable tr:hover {background-color: #BBBBBB;}
-
-.button {
-    border: 1px solid black;
-    color: black;
-    padding: 8px 24px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 12px;
-	border-radius: 4px;
-    width:120px
-}
-.button:hover {background-color: #BBBBBB;}
-
-.text {
- 	width: 100%;
-    padding: 12px 12px;
-    margin: 8px 0;
-    box-sizing: border-box;
-}
-
-// et on masque le input
-.text {
-    display: none;
-}
-
-.userTable
-{
-    border-collapse: collapse;
-    width: 100%;
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;	
-}
-
-.userTable th 
-{
-	background-color:  #4CAF50;
-	color:white;
-	text-align: left;
-	font-weight: normal
-}
-
-.error {
-	background-color: red;
-    color: black;
-    padding: 8px 24px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
-	border-radius: 4px;
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;	
-}
-
-a:link {
+a {
 	text-decoration: none;
-	color: orange;
-}
-a:visited {
-	text-decoration: none;
-	color: orange;
-}
-a:hover {
-	text-decoration: noce;
-	color: #BB0000;
-	font-weight: bold;
-	font-size: large;
-}
-a:active {
-	text-decoration: none;
-	color: orange;
+	color: currentColor;
 }
 
-.rTable {
-		    	display: table;
-		    	width: 100%;
-		font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;	
-		}
-.rTableRow {
-    	display: table-row;
+li {
+	list-style: none;
 }
-.rTableRowHead {
-    	display: table-row;
+
+h2 {
+	font-variant: small-caps;
+	font-size: 35px;
+	font-weight: 300;
+	margin: 30px 0;
+	border-bottom: 2px solid #28a745;
 }
-.rTableCell {
-    	display: table-cell;
-    	padding: 3px 10px;
-    	border: 1px solid #000000;
-    	background-color: #EEEEEE;
+
+.flex-c {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	-moz-flex-direction: column;
+	-ms-flex-direction: column;
+	-o-flex-direction: column;
+	flex-direction: column;
 }
-.rTableHead {
-    	display: table-cell;
-    	padding: 3px 10px;
-    	border: 1px solid #000000;
+
+.flex-cr {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-webkit-flex-direction: column-reverse;
+	-moz-flex-direction: column-reverse;
+	-ms-flex-direction: column-reverse;
+	-o-flex-direction: column-reverse;
+	flex-direction: column-reverse;
 }
-.rTableHeading {
-    	display: table-header-group;
-    	background-color: #4CAF50;
-    	font-weight: bold;
-    	color: white;
+
+.flex-r {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-webkit-flex-direction: row;
+	-moz-flex-direction: row;
+	-ms-flex-direction: row;
+	-o-flex-direction: row;
+	flex-direction: row;
 }
-.rTableFoot {
-    	display: table-footer-group;
-    	font-weight: bold;
-    	background-color: #ddd;
+
+.flex-rr {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-webkit-flex-direction: row-reverse;
+	-moz-flex-direction: row-reverse;
+	-ms-flex-direction: row-reverse;
+	-o-flex-direction: row-reverse;
+	flex-direction: row-reverse;
 }
-.rTableBody {
-    	display: table-row-group;
-    	background-color: white;
+
+.container {
+	max-width: 1240px;
+	margin: 0 auto;
+}
+
+.greenButton {
+	padding: 7px 20px;
+	background-color: #28a745;
+	color: white;
+	margin-top: 25px;
+	font-size: 18px;
+	border-radius: 5px;
+}
+
+.greenButton:hover {
+	background-color: #23903c;
+}
+
+.clientButton .greenButton {
+	margin: 0;
+}
+
+.middle {
+	margin-top: 50px;
+	justify-content: center;
+	align-items: center;
+}
+
+.container .item a {
+	text-decoration: underline;
+	color: #28a745;
 }
 
 /*
-div [class=rTableRow]:hover {
-	background-color: #FF0000;
-}
+   ================
+   =====HEADER===== 
+   ================
 */
-.rTableRow:hover {
-	background-color: #FF0000;
+
+#header .container {
+	justify-content: space-between;
+	align-items: center;
+	max-width: 1240px;
+	margin: 0 auto;
+	padding: 25px 0;
 }
 
-.rTableRow:nth-child(even) {
-	background-color: #0000FF;
-	}
-.rTableRow:nth-child(odd) {
-	background-color: #00FF00;
-	}
-	
-.myGrid {
-	display: grid;
-	grid-template-columns:20% 20% auto auto;
-}
-.myGridHeader {
-	background-color:  #4CAF50;
-	color:white;
-	text-align: left;
-	font-weight: bold;
-}	
-.myGridItemOdd {
-	background-color: #0000FF;
-}	
-.myGridItemEven {
-	background-color: #00FF00;
-}	
-.myPseudoTable {
-    border-collapse: collapse;
-    width: 100%;
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;	
-}
-.myPseudoTr {
-	clear: both;
-}
-.myPseudoTh {
-	background-color:  #4CAF50;
-	color:white;
-	text-align: left;
-	font-weight: bold;
-	border: 1px solid black;
-	float: left;
-	width:20%;
-	height:30px;
-}
-.myPseudoTd {
-	text-align: left;
+#header h1 {
+	font-size: 80px;
+	color: #28a745;
+	font-variant: small-caps;
 	font-weight: normal;
-	float: left;
-	width:20%;
-	border: 1px solid black;
-	background-color: inherit;
-	height:30px;
-}
-.myPseudoTh span {
-	margin-left: 5Px;
-	vertical-align: text-bottom;
-	height:inherit;
-	background-color: red;
 }
 
-.myPseudoTd span {
-	margin-left: 5Px;
-	background-color: red;
-	display: table-cell;
-    vertical-align: middle;
+#header #logoAfpa, #header #logOut {
+	width: 250px;
 }
 
-.myPseudoTd div {
-	height:inherit;
-	background-color: red;
-    top:50%;
-    position:relative;
-	margin-left: 10Px;
+#header #logOut {
+	justify-content: center;
+	align-items: center;
 }
 
-.myPseudoTh:last-child {
-	width:30%;
-}
-.myPseudoTd:last-child {
-	width:30%;
+#header #logOut a {
+	color: darkgray;
+	text-decoration: underline;
 }
 
-.myPseudoTr:nth-child(even){background-color: #DDDDDD;}
-.myPseudoTr:nth-child(odd){background-color: #EEEEEE;}
+#header #logOut img {
+	max-width: 15%;
+}
 
-.myPseudoTr:hover {background-color: #BBBBBB;}
+#header i {
+	color: #dc3545;
+	font-size: 20px;
+	text-align: center;
+}
 
-.title{
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;	
+/*
+   ================
+   ======MENU====== 
+   ================
+*/
+#menu {
+	background-color: #28a745;
+	justify-content: center;
+	align-items: center;
+}
+
+#menu a {
+	color: white;
+	padding: 5px 30px;
+	font-size: 23px;
+}
+
+#menu a.active {
+	background-color: white;
+	color: #28a745;
+}
+
+#menu a:hover {
+	background-color: white;
+	color: #28a745;
+}
+
+/*
+   ================
+   ======MAIN====== 
+   ================
+*/
+#main {
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+.container .item, .container .title {
+	justify-content: space-around;
+}
+
+.tab-4 .title h3 {
+	width: 20%;
+	background-color: #28a745;
+	color: white;
+	font-size: 20px;
+	font-weight: normal;
+	margin: 4px 2px;
+	padding: 10px 15px;
+}
+
+.tab-4 .item p, .tab-4 .item a {
+	width: 20%;
+	font-size: 17px;
+	margin: 2px 2px;
+	padding: 10px 15px;
+}
+
+.container .item:nth-child(even) p, .container .item:nth-child(even) a {
+	background-color: rgba(240, 240, 240, .65);
+}
+
+.container .item:nth-child(odd) p, .container .item:nth-child(odd) a {
+	background-color: rgba(215, 215, 215, .65);
+}
+
+/*
+   ========================
+   ======FICHE-CLIENT====== 
+   ========================
+*/
+.ficheClient h2 {
+	margin-bottom: 50px;
+}
+
+.ficheClient .info h4 {
+	font-weight: normal;
+	font-size: 24px;
+	color: #28a745;
+}
+
+.ficheClient .info p {
+	font-size: 24px;
+}
+
+.ficheClient .info #address {
+	margin-bottom: 0 !important;
+}
+
+.ficheClient .info .flex-c {
+	min-width: 25%;
+	max-width: 45%;
+	justify-content: space-between;
+}
+
+.ficheClient .info {
+	justify-content: space-around;
 }
