@@ -28,6 +28,7 @@ public abstract class Personne {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name="id_Personne")
 	private Long id;
 	
 	private String nom;

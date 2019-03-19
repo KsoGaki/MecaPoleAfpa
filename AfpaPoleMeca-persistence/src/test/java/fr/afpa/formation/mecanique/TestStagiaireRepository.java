@@ -2,7 +2,6 @@ package fr.afpa.formation.mecanique;
 
 import static org.junit.Assert.assertEquals;
 
-import java.util.Date;
 import java.util.List;
 
 import org.junit.Before;
@@ -37,7 +36,7 @@ public class TestStagiaireRepository {
 	 */
 	@Before
 	public void setUp() {
-
+/*
 		Stagiaire stagiaire1 = new Stagiaire(null, "jv.gmail.com", "VALJEAN", "Jean", "04 67 14 23 45", "12435687",
 				"mot de passe", new Date(), new Date(), "2 345 678 3");
 
@@ -47,8 +46,8 @@ public class TestStagiaireRepository {
 		entityManager.persist(stagiaire1);
 		entityManager.persist(stagiaire2);
 		listSize = 2;
+*/
 	}
-
 	/**
 	 * TEST UNITAIRE
 	 */

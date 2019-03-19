@@ -4,9 +4,11 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
@@ -37,8 +39,9 @@ public class Client extends Personne {
 	/**
 	 * CARDINALITE AVEC VEHICULE
 	 */
-	@OneToMany(mappedBy = "client")
-	private Set<Vehicule> vehicules = new HashSet<>();
+
+	@OneToMany(mappedBy="client",fetch = FetchType.LAZY,cascade= CascadeType.ALL)
+	private Set<Vehicule> vehicules = new HashSet<Vehicule>();
 
 	/**
 	 * <b>CONSTRUCTEUR SANS ARGUMENT</b>
