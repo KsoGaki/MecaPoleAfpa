@@ -50,6 +50,7 @@ public class DevisTestUnitaire {
 	
 	@Before
 	public void setUp() {
+		
 		Date crea = new Date();
 		Date paie = new Date();
 		

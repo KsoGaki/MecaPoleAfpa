@@ -39,11 +39,11 @@ public class TestStagiaireRepository {
 	public void setUp() {
 
 		Stagiaire stagiaire1 = new Stagiaire(null, "jv.gmail.com", "VALJEAN", "Jean", "04 67 14 23 45", "12435687",
-				"mot de passe", new Date(), new Date(), "2 345 678 3");
+				"mot de passe", new Date(), new Date(), "2 345 678 3",null);
 
 		Stagiaire stagiaire2 = new Stagiaire(null, "jd.gmail.com", "DUPOND", "Jacques", "05 72 84 13 21", "68735124",
 
-				"mot de passe", new Date(), new Date(), "1 234 526 2");
+				"mot de passe", new Date(), new Date(), "1 234 526 2",null);
 		entityManager.persist(stagiaire1);
 		entityManager.persist(stagiaire2);
 		listSize = 2;

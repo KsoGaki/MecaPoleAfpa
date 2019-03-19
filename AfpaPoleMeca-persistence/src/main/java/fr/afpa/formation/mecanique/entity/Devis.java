@@ -27,31 +27,31 @@ public class Devis {
 	@GeneratedValue(strategy=GenerationType.AUTO,generator = "native")
 	@GenericGenerator(name="native", strategy= "native")
 	private Long id;
-	
+
 	@Column(name="dateCreation", nullable=false)
 	private Date dateCreation;
-	
+
 	@Column(length=50, nullable=false)
 	private String numero;
-	
+
 	@Column(name="datePaiement", nullable=false)
 	private Date datePaiement;
-	
+
 	@OneToMany(mappedBy="devis",fetch = FetchType.LAZY,cascade= CascadeType.ALL)
-    private Set<ItemDevis> listItemDevis = new HashSet<ItemDevis>() ;
-	
+	private Set<ItemDevis> listItemDevis = new HashSet<ItemDevis>() ;
+
 	@ManyToOne
 	@JoinColumn(name="id_Devis")
 	private Fournisseur fournisseur;
-	
-	
+
+
 	@ManyToOne
 	@JoinColumn(name="id_TypePaiment")
 	private TypePaiement typePaiement;
-	
+
 
 	////////////CONSTRUCTEURS///////////
-	
+
 	/**
 	 * <b>CONSTRUCTEUR SANS ARGUMENT</b>
 	 */
@@ -85,7 +85,7 @@ public class Devis {
 		this.fournisseur = fournisseur;
 		this.typePaiement = typePaiement;
 	}
-	
+
 	////////GETTERS ET SETTERS////////////
 	public Long getId() {
 		return id;	}
@@ -141,6 +141,6 @@ public class Devis {
 	public void setTypePaiement(TypePaiement typePaiement) {
 		this.typePaiement = typePaiement;
 	}
-		
-	
+
+
 }
