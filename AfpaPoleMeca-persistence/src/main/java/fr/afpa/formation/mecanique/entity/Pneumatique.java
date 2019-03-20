@@ -54,7 +54,9 @@ public class Pneumatique {
 	 * <b>Constructeur vide</b>
 	 * 
 	 */
-	public Pneumatique() {}
+	public Pneumatique() {
+		
+	}
 	
 	/**
 	 * 
