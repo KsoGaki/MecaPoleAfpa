@@ -165,11 +165,11 @@ public class ControleQualite {
 		this.visibilite = visibilite;
 	}
 
-	public Niveau getNiveaux() {
+	public Niveau getNiveau() {
 		return niveau;
 	}
 
-	public void setNiveaux(Niveau niveau) {
+	public void setNiveau(Niveau niveau) {
 		this.niveau = niveau;
 	}
 	
