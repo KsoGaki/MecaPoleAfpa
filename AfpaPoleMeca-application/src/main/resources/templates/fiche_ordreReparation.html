@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title th:text="#{client.title}"></title>
+<link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+<link rel="stylesheet" th:href="@{/style/main.css}" />
+</head>
+<body>
+	<div id="header">
+		<div class="container flex-r">
+			<div id="logoAfpa">
+				<img th:src="@{/img/logo_home.png}" alt="">
+			</div>
+			<h1 th:text="#{application.title}"></h1>
+			<div id='logOut' class="flex-c">
+				<img th:src="@{/img/logo_logout.jpg}" alt=""> <span>Bonjour, ~User~</span>
+				<a href="#">deconnexion</a>
+			</div>
+		</div>
+	</div>
+	<div id="menu" class="flex-r">
+		<a href="\accueil" th:text="#{menu.accueil}"></a>
+		<a href="\client" th:text="#{menu.clients}"></a>
+		<a href="\ordreReparation" class="active" th:text="#{menu.ordre}"></a>
+		<a href="\administration" th:text="#{menu.admin}"></a>
+	</div>
+	<div id="main">
+		<div id="timeline" class="flex-r">
+			<div class="timelineContent  flex-r">
+				<span class="active" th:text="#{ordre_reparation_detail.validation_formateur}"></span> <span class="active" th:text="#{ordre_reparation_detail.attente_devis}"></span> <span th:text="#{ordre_reparation_detail.reparation}"></span> <span th:text="#{ordre_reparation_detail.controle_qualite}"></span> <span th:text="#{ordre_reparation_detail.attente_archivage}"></span>
+			</div>
+		</div>
+		<div class="container ficheClient">
+			<h2 th:text="#{client_detail.title}"></h2>
+			<div class="flex-r info">
+				<div class="flex-c">
+					<div class="flex-r">
+						<h4 th:text="#{client.prenom} + ':&nbsp;'"></h4>
+						<p th:text="${ordreReparation.vehicule.client.prenom}"></p>
+					</div>
+					<div class="flex-r">
+						<h4 th:text="#{client.nom} + ':&nbsp;'"></h4>
+						<p th:text="${ordreReparation.vehicule.client.nom}"></p>
+					</div>
+					<div class="flex-r">
+						<h4 th:text="#{client.telephone} + ':&nbsp;'"></h4>
+						<p th:text="${ordreReparation.vehicule.client.telephone}"></p>
+					</div>
+					<div class="flex-r">
+						<h4 th:text="#{client.email} + ':&nbsp;'"></h4>
+						<p th:text="${ordreReparation.vehicule.client.mail}"></p>
+					</div>
+				</div>
+				<div class="flex-c">
+					<h4 id="address" th:text="#{client_delail.adresse} + ':&nbsp;'"></h4>
+					<p th:text="${ordreReparation.vehicule.client.adresse.adresse}"></p>
+					<p th:text="${ordreReparation.vehicule.client.adresse.codePostal} + '&nbsp;-&nbsp;' + ${ordreReparation.vehicule.client.adresse.localite}"></p>
+					<br>
+					<div class="flex-r">
+						<h4 th:text="#{client.carte}  + ':&nbsp;'"></h4>
+						<p th:text="${ordreReparation.vehicule.client.numeroCarteAfpa}"></p>
+					</div>
+				</div>
+			</div>
+			<h2 th:text="#{vehicule_detail.title}"></h2>
+			<div class="flex-r info">
+				<div class="flex-c">
+					<div class="flex-r">
+						<h4 th:text="#{vehicule.marque} + ':&nbsp;'"></h4>
+						<p th:text="${ordreReparation.vehicule.marque}"></p>
+					</div>
+					<div class="flex-r">
+						<h4 th:text="#{vehicule.modele} + ':&nbsp;'"></h4>
+						<p th:text="${ordreReparation.vehicule.modele}"></p>
+					</div>
+					<div class="flex-r">
+						<h4 th:text="#{vehicule.kilometrage} + ':&nbsp;'"></h4>
+						<p th:text="${ordreReparation.vehicule.kilometrage} + ' km'"></p>
+					</div>
+				</div>
+				<div class="flex-c">
+					<div class="flex-r">
+						<h4 th:text="#{vehicule.numeroCarteGrise} + ':&nbsp;'"></h4>
+						<p th:text="${ordreReparation.vehicule.numeroCarteGrise}"></p>
+					</div>
+					<div class="flex-r">
+						<h4 th:text="#{vehicule.numeroAssurance} + ':&nbsp;'"></h4>
+						<p th:text="${ordreReparation.vehicule.numeroAssurance}"></p>
+					</div>
+					<div class="flex-r">
+						<h4 th:text="#{vehicule_detail.dateMiseCirculation} + ':&nbsp;'"></h4>
+						<p th:text="${dateCirculation}"></p>
+					</div>
+				</div>
+			</div>
+			<h2 th:text="#{ordre_reparation_detail.title}"></h2>
+			<div id="orDetail" class="flex-c info">
+				<div class="flex-r ">
+					<h4 th:text="#{ordre_reparation_detail.dateEntree} + ':&nbsp;'"></h4>
+					<p th:text="${dateEntree}"></p>
+				</div>
+				<br />
+				<div class="flex-c">
+					<h4 th:text="#{ordre_reparation_detail.descpription} + ':&nbsp;'"></h4>
+					<p th:text="${ordreReparation.symptomesClient}"></p>
+				</div>
+				<br />
+				<div class="flex-c">
+					<h4 th:text="#{ordre_reparation_detail.travaux_a_realiser} + ':&nbsp;'"></h4>
+					<p th:text="${ordreReparation.interventionARealiser}"></p>
+				</div>
+				<br />
+				<div class="flex-r ">
+					<h4 th:text="#{ordre_reparation_detail.dateSortie} + ':&nbsp;'"></h4>
+					<p th:text="${dateEntree}"></p>
+				</div>
+			</div>
+			<div class="flex-rr middle">
+				<a href="\ordreReparation" class="flex-c greenButton" th:text="#{client.return}"></a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
