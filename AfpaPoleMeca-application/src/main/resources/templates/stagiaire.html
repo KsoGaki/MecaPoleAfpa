@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<table border="1">
+	<tr>
+	<th th:text="#{stagiaire.nom}"></th>
+	<th th:text="#{stagiaire.prenom}"></th>
+	<th th:text="#{stagiaire.mail}"></th>
+	<th th:text="#{stagiaire.dateInscription}"></th>
+	<th th:text="#{stagiaire.numeroCarte}"></th>
+	<th>modifier</th>	
+	<th>supprimer</th>
+	
+	
+	</tr>
+	<tr th:each="stagiaire:${stagiaires}">
+	<td th:text="${stagiaire.nom}">	</td>
+	<td th:text="${stagiaire.prenom}">	</td>
+	<td th:text="${stagiaire.mail}">	</td>
+	<td th:text="${stagiaire.dateInscription}">	</td>
+	<td th:text="${stagiaire.numeroCarte}">	</td>
+	<td><a>mod</a>	</td>
+	<td><a>suppr</a>	</td>
+	
+	</tr>
+	
+	
+</table>
+
+</body>
+</html>

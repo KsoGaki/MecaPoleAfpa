@@ -27,27 +27,25 @@ public class Stagiaire extends Utilisateur {
 		super();
 	}
 	
-	/**
-	 * <b>CONSTRUCTEUR AVEC LES ARGUMENTS SUIVANTS :</b><br/>
-	 * TOUS LES ATTRIBUTS SAUF L'ID.<br/>
-	 * (UTILISE LORS DES OPERATIONS DE CREATION 'create'). <br/>
-	 */
-	public Stagiaire(String mail, String nom, String prenom, String telephone,String identifiant, String motDePasse, Date dateInscription, Date dateRadiation, RoleUtilisateur roleUtilisateur
-			, String numeroCarte) {
-		super(mail, nom, prenom, telephone, identifiant, motDePasse, dateInscription, dateRadiation, roleUtilisateur);
+	
+			
+	public Stagiaire(Long id, String mail, String nom, String prenom, String telephone, String identifiant,
+			String motDePasse, Date dateInscription, Date dateRadiation, RoleUtilisateur roleUtilisateur,
+			String numeroCarte, Filiere filiere) {
+		super(id, mail, nom, prenom, telephone, identifiant, motDePasse, dateInscription, dateRadiation,
+				roleUtilisateur);
 		this.numeroCarte = numeroCarte;
+		this.filiere = filiere;
 	}
 
-	/**
-	 * <b>CONSTRUCTEUR AVEC LES ARGUMENTS SUIVANTS :</b><br/>
-	 * TOUS LES ATTRIBUTS Y COMPRIS L'ID.<br/>
-	 * (UTILISE LORS DES OPERATIONS DE RECHERCHE ET D'EXTRACTION 'findBy'). <br/>
-	 */
-	public Stagiaire(Long id, String mail, String nom,String prenom,String telephone, String identifiant, String motDePasse, Date dateInscription, Date dateRadiation, RoleUtilisateur roleUtilisateur
-			, String numeroCarte) {
-		super(id, mail, nom, prenom, telephone, identifiant, motDePasse, dateInscription, dateRadiation, roleUtilisateur);
+	public Stagiaire(String mail, String nom, String prenom, String telephone, String identifiant, String motDePasse,
+			Date dateInscription, Date dateRadiation, RoleUtilisateur roleUtilisateur, String numeroCarte,
+			Filiere filiere) {
+		super(mail, nom, prenom, telephone, identifiant, motDePasse, dateInscription, dateRadiation, roleUtilisateur);
 		this.numeroCarte = numeroCarte;
+		this.filiere = filiere;
 	}
+	
 
 	public String getNumeroCarte() {
 		return numeroCarte;

@@ -33,11 +33,10 @@ public class TestStagiaireServiceMock {
 	@Before
 	public void setUp() {
 
-		Stagiaire stagiaire1 = new Stagiaire(null, "jv.gmail.com", "VALJEAN", "Jean", "04 67 14 23 45", "12435687",
-				"mot de passe", new Date(), new Date(), "2 345 678 3", R);
-
-		Stagiaire stagiaire2 = new Stagiaire(null, "jd.gmail.com", "DUPOND", "Jacques", "05 72 84 13 21", "68735124",
-				"mot de passe", new Date(), new Date(), "1 234 526 2");
+		Stagiaire stagiaire1 = new Stagiaire("jv.gmail.com", "VALJEAN", "Jean", "04 68 14 23 45", "12434187",
+				"mot de passe", new Date(), new Date(),null, "2 345 678 3",null);
+		Stagiaire stagiaire2 = new Stagiaire("jd.gmail.com", "DUPONT", "Jean", "04 67 14 23 45", "12435687",
+				"mot de passe2", new Date(), new Date(),null, "2 345 678 4",null);
 
 		stagiaires.add(stagiaire1);
 		stagiaires.add(stagiaire2);
