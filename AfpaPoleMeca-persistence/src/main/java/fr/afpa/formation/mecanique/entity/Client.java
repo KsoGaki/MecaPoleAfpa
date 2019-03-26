@@ -9,15 +9,26 @@ import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+
 @Entity
 @DiscriminatorValue(value = "CLI")
 @Table(name = "Client")
 public class Client extends Personne {
+	
+	@Id
+	@GeneratedValue(strategy= GenerationType.AUTO, generator="native")
+	@GenericGenerator(name = "native", strategy = "native")
+	@Column(name="id_Client")
+	private Long id;
 
 	@Column(unique = true, length = 25)
 	private String numero;
@@ -40,7 +51,7 @@ public class Client extends Personne {
 	 * CARDINALITE AVEC VEHICULE
 	 */
 
-	@OneToMany(mappedBy="client",fetch = FetchType.LAZY,cascade= CascadeType.ALL)
+	@OneToMany(mappedBy="client",fetch = FetchType.LAZY, cascade= CascadeType.ALL)
 	private Set<Vehicule> vehicules = new HashSet<Vehicule>();
 
 	/**

@@ -17,6 +17,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name = "Vehicule")
@@ -39,10 +40,11 @@ public class Vehicule {
 	private String immatriculation;
 	@Column(length = 17)
 	private String vin;
+	@DateTimeFormat (pattern="MM-dd-YYYY")
 	private Date dateMiseCirculation;
-	
+
 	@OneToMany(mappedBy="vehicule",fetch = FetchType.LAZY,cascade= CascadeType.ALL)
-    private Set<OrdreReparation> listOrdreReparation = new HashSet<OrdreReparation>() ;
+	private Set<OrdreReparation> listOrdreReparation = new HashSet<OrdreReparation>() ;
 
 	/**
 	 * CARDINALITE AVEC CLIENT
@@ -109,7 +111,7 @@ public class Vehicule {
 	public Client getClient() {
 		return client;
 	}
-	
+
 	public Set<OrdreReparation> getListOrdreReparation() {
 		return listOrdreReparation;
 	}
@@ -153,7 +155,7 @@ public class Vehicule {
 	public void setClient(Client client) {
 		this.client = client;
 	}
-	
+
 	public void setListOrdreReparation(Set<OrdreReparation> listOrdreReparation) {
 		this.listOrdreReparation = listOrdreReparation;
 	}

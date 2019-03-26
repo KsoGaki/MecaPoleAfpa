@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import fr.afpa.formation.mecanique.entity.Client;
+import fr.afpa.formation.mecanique.repository.AdresseRepository;
 import fr.afpa.formation.mecanique.repository.ClientRepository;
 
 @Service
@@ -13,6 +14,9 @@ public class ClientService implements IService<Client, Exception>{
 	
 	@Autowired
 	ClientRepository clientRepository;
+	
+	@Autowired
+	AdresseRepository adresseRepository;
 
 	@Override
 	public List<Client> findAll() throws Exception {
@@ -23,6 +27,7 @@ public class ClientService implements IService<Client, Exception>{
 
 	@Override
 	public Client create(Client t) throws Exception {
+		adresseRepository.save(t.getAdresse());
 		return clientRepository.save(t);
 	}
 
@@ -39,7 +44,6 @@ public class ClientService implements IService<Client, Exception>{
 	@Override
 	public void delete(Client t) throws Exception {
 		clientRepository.delete(t);
-		
 	}
 
 	@Override

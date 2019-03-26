@@ -30,9 +30,7 @@
 			<div class="flex-rr clientButton">
 				<a href="\client/nouveau" class="flex-c greenButton" th:text="#{client.ajouter}"></a>
 			</div>
-			
 			<h2 th:text="#{client.title}"></h2>
-
 			<div class="title flex-r">
 				<h3 th:text="#{client.prenom}"></h3>
 				<h3 th:text="#{client.nom}"></h3>
@@ -40,7 +38,6 @@
 				<h3 th:text="#{client.telephone}"></h3>
 				<h3></h3>
 			</div>
-
 			<div th:each="client : ${clients}" class="item flex-r">
 				<p th:text="${client.prenom}"></p>
 				<p th:text="${client.nom}"></p>
@@ -48,8 +45,8 @@
 				<p th:text="${client.telephone}"></p>
 				<a th:href=@{|/client/${client.id}/|} th:text="#{client.todetail}"></a>
 			</div>
-
 		</div>
 	</div>
+	<div th:replace="fragments/footer"></div>
 </body>
 </html>

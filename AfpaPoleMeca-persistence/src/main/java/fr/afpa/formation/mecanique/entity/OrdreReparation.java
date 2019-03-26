@@ -12,6 +12,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name="OrdreReparation")
@@ -27,12 +28,15 @@ public class OrdreReparation {
 	private String numero;
 	
 	@Column(name="dateCreation")
+	@DateTimeFormat (pattern="MM-dd-YYYY")
 	private Date dateCreation;
 	
 	@Column(name="dateEntree")
+	@DateTimeFormat (pattern="MM-dd-YYYY")
 	private Date dateEntree;
 	
 	@Column(name="dateSortie")
+	@DateTimeFormat (pattern="MM-dd-YYYY")
 	private Date dateSortie;
 
 	@Column(name="symptomesClient")
