@@ -1,9 +1,6 @@
 package fr.afpa.formation.mecanique.controller;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.Date;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,13 +14,11 @@ import fr.afpa.formation.mecanique.entity.ControleQualite;
 import fr.afpa.formation.mecanique.entity.Eclairage;
 import fr.afpa.formation.mecanique.entity.Niveau;
 import fr.afpa.formation.mecanique.entity.Pneumatique;
-import fr.afpa.formation.mecanique.entity.Vehicule;
 import fr.afpa.formation.mecanique.entity.Visibilite;
 import fr.afpa.formation.mecanique.service.ControleQualiteService;
 import fr.afpa.formation.mecanique.service.EclairageService;
 import fr.afpa.formation.mecanique.service.NiveauService;
 import fr.afpa.formation.mecanique.service.PneumatiqueService;
-import fr.afpa.formation.mecanique.service.VehiculeService;
 import fr.afpa.formation.mecanique.service.VisibiliteService;
 
 @Controller

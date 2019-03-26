@@ -91,6 +91,7 @@ h2 {
 	margin-top: 25px;
 	font-size: 18px;
 	border-radius: 5px;
+	border: none;
 }
 
 .greenButton:hover {
@@ -117,7 +118,6 @@ h2 {
    =====HEADER===== 
    ================
 */
-
 #header .container {
 	justify-content: space-between;
 	align-items: center;
@@ -228,13 +228,12 @@ h2 {
    ======FICHE-CLIENT====== 
    ========================
 */
-
 .ficheClient h2 {
 	margin-bottom: 50px;
 }
 
 .ficheClient .info {
-	padding: 0 12.5%;
+	padding: 0 10%;
 	justify-content: space-around;
 }
 
@@ -259,85 +258,173 @@ h2 {
 
 /*
    ========================
+   =======NEW-CLIENT======= 
+   ========================
+*/
+.input {
+	padding: 0 10%;
+	margin: 30px 0;
+	justify-content: space-between;
+}
+
+.input span {
+	font-weight: normal;
+	font-size: 22px;
+	color: #28a745;
+}
+
+.input sup {
+	margin-right: 10px;
+	color: deeppink;
+	font-size: 18px;
+	font-weight: 600;
+}
+
+.input input, .input textarea {
+	width: 100%;
+	padding: 5px 10px;
+	font-size: 18px;
+	border: 1px solid grey;
+}
+
+.input-50 label {
+	width: 45%;
+}
+
+.input-33 label {
+	width: 30%;
+}
+
+.input-100 label {
+	width: 100%;
+}
+
+.input input:required:invalid {
+	border-right: 5px solid red;
+	outline-color: red;
+}
+
+.input input:valid {
+	border-right: 5px solid green;
+	outline-color: green;
+}
+
+/*
+   ========================
    ========TIMELINE======== 
    ========================
 */
-
 #timeline {
-    margin: 50px 0;
-    justify-content: center;
+	margin: 50px 0;
+	justify-content: center;
 }
 
-#timeline span{
-    position: relative;
-    display: block;
-    text-align: center;
-    height: 40px;
-    font-size: 20px;
-    line-height: 40px;
-    padding: 0 10px 0 5px;
-    margin-right: 23px;
-    background: lightgray;
-    color: black;
+#timeline span {
+	position: relative;
+	display: block;
+	text-align: center;
+	height: 40px;
+	font-size: 20px;
+	line-height: 40px;
+	padding: 0 10px 0 5px;
+	margin-right: 23px;
+	background: lightgray;
+	color: black;
 }
 
-#timeline span.active  {
-    background-color: #28a745;
-    color: white;
+#timeline span.active {
+	background-color: #28a745;
+	color: white;
 }
 
 #timeline span.active:before {
-    border-color: #28a745;
-    border-left-color: transparent;
+	border-color: #28a745;
+	border-left-color: transparent;
 }
 
 #timeline span.active:after {
-    border-left-color: #28a745;
+	border-left-color: #28a745;
 }
 
 #timeline span:first-child {
-    padding-left: 15px;
-    -moz-border-radius: 4px 0 0 4px;
-    -webkit-border-radius: 4px;
-    border-radius: 4px 0 0 4px;
+	padding-left: 15px;
+	-moz-border-radius: 4px 0 0 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px 0 0 4px;
 }
 
 #timeline span:first-child:before {
-    border: none;
+	border: none;
 }
 
-#timeline span:last-child  {
-    padding-right: 15px;
-    -moz-border-radius: 0 4px 4px 0;
-    -webkit-border-radius: 0;
-    border-radius: 0 4px 4px 0;
+#timeline span:last-child {
+	padding-right: 15px;
+	-moz-border-radius: 0 4px 4px 0;
+	-webkit-border-radius: 0;
+	border-radius: 0 4px 4px 0;
 }
 
 #timeline span:last-child:after {
-    border: none;
+	border: none;
 }
 
 #timeline span:before, #timeline span:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    border: 0 solid lightgray;
-    border-width: 20px 10px;
-    width: 0;
-    height: 0;
+	content: "";
+	position: absolute;
+	top: 0;
+	border: 0 solid lightgray;
+	border-width: 20px 10px;
+	width: 0;
+	height: 0;
 }
 
 #timeline span:before {
-    left: -20px;
-    border-left-color: transparent;
+	left: -20px;
+	border-left-color: transparent;
 }
 
 #timeline span:after {
-    left: 100%;
-    border-color: transparent;
-    border-left-color: lightgray;
+	left: 100%;
+	border-color: transparent;
+	border-left-color: lightgray;
 }
 
+/*
+   ========================
+   ========FICHE-OR======== 
+   ========================
+*/
+
 #orDetail .flex-c {
-	width: 100%!important;
+	width: 100% !important;
+}
+
+textarea {
+	max-width: 100%;
+	height: 250px;
+}
+
+
+
+/*
+   ========================
+   =========FOOTER========= 
+   ========================
+*/
+#footer {
+	display: none;
+	position: relative;
+	bottom: 0;
+	background-color: #28a745;
+	width: 100%;
+	padding: 5px 0;
+	color: white;
+	font-weight: lighter;
+}
+
+#footer h3 {
+	color: white;
+	font-weight: lighter;
+	text-align: center;
+	font-size: 15px;
 }

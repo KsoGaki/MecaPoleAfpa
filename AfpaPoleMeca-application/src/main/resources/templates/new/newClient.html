@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title th:text="#{client.title}"></title>
+<link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+<link rel="stylesheet" th:href="@{/style/main.css}" />
+</head>
+<body>
+	<div id="header">
+		<div class="container flex-r">
+			<div id="logoAfpa">
+				<img th:src="@{/img/logo_home.png}" alt="">
+			</div>
+			<h1 th:text="#{application.title}"></h1>
+			<div id='logOut' class="flex-c">
+				<img th:src="@{/img/logo_logout.jpg}" alt=""> <span>Bonjour, ~User~</span>
+				<a href="#">deconnexion</a>
+			</div>
+		</div>
+	</div>
+	<div id="menu" class="flex-r">
+		<a href="\accueil" th:text="#{menu.accueil}"></a>
+		<a href="\client" class="active" th:text="#{menu.clients}"></a>
+		<a href="\ordreReparation" th:text="#{menu.ordre}"></a>
+		<a href="\administration" th:text="#{menu.admin}"></a>
+	</div>
+	<div id="main">
+		<div class="container">
+
+			<h2 th:text="#{client_new.title}"></h2>
+
+			<form th:action="@{\vehicule/nouveau}" th:object="${client}" method="post">
+				<div class="flex-r input-50 input">
+					<label class="flex-c">
+						<span th:utext="#{client.prenom} + '<sup>*</sup>'"></span>
+						<input th:min="1" type="text" th:field="*{prenom}" required />
+					</label>
+					<label class="flex-c">
+						<span th:utext="#{client.nom} + '<sup>*</sup>'"></span>
+						<input th:min="1" type="text" th:field="*{nom}" required />
+					</label>
+				</div>
+				<div class="flex-r input-50 input">
+					<label class="flex-c">
+						<span th:utext="#{client.email} + '<sup>*</sup>'"></span>
+						<input th:min="1" type="email" th:field="*{mail}" required />
+					</label>
+					<label class="flex-c">
+						<span th:utext="#{client.telephone} + '<sup>*</sup>'"></span>
+						<input type="text" th:field="*{telephone}" required />
+					</label>
+				</div>
+				<div class="flex-r input-50 input">
+					<label class="flex-c">
+						<span th:utext="#{client_new.numero_carte} + '<sup>*</sup>'"></span>
+						<input type="text" th:field="*{numeroCarteAfpa}" required />
+					</label>
+					<label for=""></label>
+				</div>
+				<div class="flex-r input-33 input">
+					<label class="flex-c">
+						<span th:utext="#{adresse.code_postal} + '<sup>*</sup>'"></span>
+						<input type="text" th:field="*{adresse.codePostal}" required />
+					</label>
+					<label class="flex-c">
+						<span th:utext="#{adresse.ville} + '<sup>*</sup>'"></span>
+						<input type="text" th:field="*{adresse.localite}" required />
+					</label>
+					<label class="flex-c"> </label>
+				</div>
+				<div class="flex-r input-100 input">
+					<label class="flex-c">
+						<span th:utext="#{adresse.adresse} + '<sup>*</sup>'"></span>
+						<input type="text" th:field="*{adresse.adresse}" required />
+					</label>
+				</div>
+				<div class="flex-r input-100 input">
+					<label class="flex-c">
+						<span th:utext="#{adresse.complement_adresse}"></span>
+						<input type="text" th:field="*{adresse.complement}" />
+					</label>
+				</div>
+				<div class="flex-rr middle">
+					<input type="submit" class="flex-c greenButton" th:value="#{client_new.create}" />
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

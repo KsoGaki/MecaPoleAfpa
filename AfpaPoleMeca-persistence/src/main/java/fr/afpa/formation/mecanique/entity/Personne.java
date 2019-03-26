@@ -11,6 +11,8 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+
 
 /**
  * 
@@ -27,22 +29,23 @@ import javax.persistence.Table;
 public abstract class Personne {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy= GenerationType.AUTO, generator="native")
+	@GenericGenerator(name = "native", strategy = "native")
 	@Column(name="id_Personne")
 	private Long id;
-	
+
 	private String nom;
 	private String prenom;
 	private String telephone;
-	
+
 	@Column(unique=true, length=50)
 	private String mail;
-	
+
 	/**
 	 * <b>CONSTRUCTEUR SANS ARGUMENT</b>
 	 */
 	public Personne() {}
-	
+
 	/**
 	 * <b>CONSTRUCTEUR AVEC LES ARGUMENTS SUIVANTS :</b><br/>
 	 * TOUS LES ATTRIBUTS SAUF L'ID.<br/>
@@ -61,34 +64,62 @@ public abstract class Personne {
 	 * (UTILISE LORS DES OPERATIONS DE RECHERCHE ET D'EXTRACTION 'findBy'). <br/>
 	 */
 	public Personne(Long id, String nom, String prenom, String telephone, String mail) {
+		this.id = id;
 		this.nom = nom;
 		this.prenom = prenom;
 		this.telephone = telephone;
 		this.mail = mail;
 	}
 
-	public Long   getId       () { return this.id;        }
-	public String getNom      () { return this.nom;       }
-	public String getPrenom   () { return this.prenom;    }
-	public String getTelephone() { return this.telephone; }
-	public String getMail     () { return this.mail;      }
-	
-	
-	public void setId       (Long   id       ) { this.id        = id;        }
-	public void setNom      (String nom      ) { this.nom       = nom;       }
-	public void setPrenom   (String prenom   ) { this.prenom    = prenom;    }
-	public void setTelephone(String telephone) { this.telephone = telephone; }
-	public void setMail     (String mail     ) { this.mail      = mail;      }
-	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getNom() {
+		return nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	public String getPrenom() {
+		return prenom;
+	}
+
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
+	}
+
+	public String getTelephone() {
+		return telephone;
+	}
+
+	public void setTelephone(String telephone) {
+		this.telephone = telephone;
+	}
+
+	public String getMail() {
+		return mail;
+	}
+
+	public void setMail(String mail) {
+		this.mail = mail;
+	}
+
 	@Override
 	public String toString() {
 		String description = "Personne{"
-											    + "id"        + ":" + this.id 
-									+ "," + " " + "nom"       + ":" + this.nom 
-									+ "," + " " + "prenom"    + ":" + this.prenom 
-									+ "," + " " + "telephone" + ":" + this.telephone 
-									+ "," + " " + "mail"      + ":" + this.mail
-									+ "}";
+				+ "id"        + ":" + this.id 
+				+ "," + " " + "nom"       + ":" + this.nom 
+				+ "," + " " + "prenom"    + ":" + this.prenom 
+				+ "," + " " + "telephone" + ":" + this.telephone 
+				+ "," + " " + "mail"      + ":" + this.mail
+				+ "}";
 		return description;
 	}
 }

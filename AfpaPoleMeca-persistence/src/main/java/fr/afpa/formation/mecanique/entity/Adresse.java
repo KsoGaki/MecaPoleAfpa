@@ -29,10 +29,18 @@ public class Adresse {
 	public Adresse() {
 		
 	}
-
+	
 	public Adresse(Long id, String adresse, String complement, String codePostal, String localite) {
 		
 		this.id = id;
+		this.adresse = adresse;
+		this.complement = complement;
+		this.codePostal = codePostal;
+		this.localite = localite;
+	}
+
+	public Adresse(String adresse, String complement, String codePostal, String localite) {
+		
 		this.adresse = adresse;
 		this.complement = complement;
 		this.codePostal = codePostal;

@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+	<div id="footer">
+		<h3 th:text=#{application.copyright}></h3>
+	</div>
+	<script>
+		function footerPlacement() {
+			if(document.body.scrollHeight <= window.innerHeight) {
+				document.getElementById("footer").style.position = "absolute";
+			} else {
+				document.getElementById("footer").style.position = "relative";
+			}
+		}
+		footerPlacement();
+	</script>
+</html>
