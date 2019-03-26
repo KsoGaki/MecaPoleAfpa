@@ -23,7 +23,8 @@
 	<td></td>
 	<td></td>
 	<td><input type="text" th:value="${cq.kilometrageFin}" th:field="*{kilometrageFin}"></td>
-	<td><a th:text="${#dates.format(#dates.createNow(), 'dd MMM yyyy HH:mm')}" th:value="${#dates.format(#dates.createNow(), 'dd MMM yyyy HH:mm')}" th:field="*{dateDebut}" ></td>	
+	<td th:if="${cq.dateDebut} != null"><a th:text="${cq.dateDebut}" th:value="${#dates.format(#dates.createNow(), 'dd MMM yyyy HH:mm')}" th:field="*{dateDebut}" ></td>	
+	<td th:if="${cq.dateDebut} == null"><a th:text="${#dates.format(#dates.createNow(), 'yyyy-MM-dd HH:mm:ss')}"></td>
 	</tr>
 	</table>
 	

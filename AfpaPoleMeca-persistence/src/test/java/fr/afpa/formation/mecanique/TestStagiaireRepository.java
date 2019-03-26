@@ -2,14 +2,16 @@ package fr.afpa.formation.mecanique;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.Date;
 import java.util.List;
+
+import javax.persistence.EntityManager;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -24,7 +26,7 @@ import fr.afpa.formation.mecanique.repository.StagiaireRepository;
 public class TestStagiaireRepository {
 
 	@Autowired
-	TestEntityManager entityManager;
+	EntityManager entityManager;
 
 	@Autowired
 	StagiaireRepository stagiaireRepository;
@@ -36,17 +38,19 @@ public class TestStagiaireRepository {
 	 */
 	@Before
 	public void setUp() {
-/*
-		Stagiaire stagiaire1 = new Stagiaire(null, "jv.gmail.com", "VALJEAN", "Jean", "04 67 14 23 45", "12435687",
-				"mot de passe", new Date(), new Date(), "2 345 678 3");
+		
+	
 
-		Stagiaire stagiaire2 = new Stagiaire(null, "jd.gmail.com", "DUPOND", "Jacques", "05 72 84 13 21", "68735124",
+		Stagiaire stagiaire1 = new Stagiaire("jv.gmail.com", "VALJEAN", "Jean", "04 68 14 23 45", "12434187",
+				"mot de passe", new Date(), new Date(),null, "2 345 678 3",null);
+		Stagiaire stagiaire2 = new Stagiaire("jd.gmail.com", "DUPONT", "Jean", "04 67 14 23 45", "12435687",
+				"mot de passe2", new Date(), new Date(),null, "2 345 678 4",null);
 
-				"mot de passe", new Date(), new Date(), "1 234 526 2");
+
 		entityManager.persist(stagiaire1);
 		entityManager.persist(stagiaire2);
 		listSize = 2;
-*/
+
 	}
 	/**
 	 * TEST UNITAIRE

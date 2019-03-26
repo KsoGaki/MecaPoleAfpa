@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title th:text="#{client.title}"></title>
+<link href="https://fonts.googleapis.com/css?family=Titillium+Web"
+	rel="stylesheet">
+<link rel="stylesheet" th:href="@{/style/main.css}" />
+</head>
+<body>
+	
+
+		<form th:action="@{/stagiaire/create}" th:object="${stagiaire}" method="post">
+			<label>Nom</label><input type="text" value="" th:field="*{nom}"><br />
+			<label>Prénom</label><input type="text" value="" th:field="*{prenom}"><br />
+			<label>Mail</label><input type="email" value="" th:field="*{mail}"><br />
+			<label>Téléphone</label><input type="text" value=""
+				th:field="*{telephone}"><br /> <label>Identifiant</label><input
+				type="text" value="" th:field="*{identifiant}"><br /> <label>Mot
+				de passe</label><input type="password" value="" th:field="*{motDePasse}"><br />
+			<label>Date d'inscription</label><input type="date" value=""
+				><br /> <label>Date de
+				radiation</label><input type="date" value="" ><br />
+			<label>Numéro de carte AFPA</label><input type="text" value=""
+				th:field="*{numeroCarte}"><br /> <label>Filière</label>
+			<select  th:field="*{filiere}">
+				<option th:each="filiere : ${filiereList}" th:value="${filiere.id}" th:text="${filiere.nom}"></option>				
+			</select> 
+			<br />
+			<p></p>
+			<input type="submit" class="button" value="Procéder">
+		</form>
+
+
+
+	
+</body>
+</html>

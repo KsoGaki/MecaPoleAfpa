@@ -60,7 +60,7 @@ public class ControleQualiteController {
 		Visibilite vs = new Visibilite(false, false, false, false, false, false, false, false, false);
 		Eclairage ec = new Eclairage(false, false, false, false, false, false, false, false);	
 				
-		ControleQualite cq = new ControleQualite(new Date(), (double) 0, null, pn, ec, vs, nv);
+		ControleQualite cq = new ControleQualite(null, (double) 0, null, pn, ec, vs, nv);
 		model.addAttribute("cq", cq);
 		
 		
